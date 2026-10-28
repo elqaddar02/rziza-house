@@ -148,7 +148,7 @@ const translations = {
     // Comment commander
     howEyebrow: "ساهلة بزاف",
     howTitle: "الطلب فـ<em>ثلاث خطوات.</em>",
-    step1Title: "ختاروا الخبز ديالكم",
+    step1Title: "ختاروا الطلب ديالكم",
     step1Text: "زيدوا اللي عجبكم للاختيارات ديالكم وختاروا الكمية.",
     step2Title: "صيفطوا عبر واتساب",
     step2Text: "الطلب ديالكم كيوجد فرسالة واجدة، غير صيفطوها.",
