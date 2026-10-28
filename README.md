@@ -22,9 +22,9 @@ Orders are sent to WhatsApp +212 654 489 425.
 
 ## Deployment
 
-Live on Cloudflare (free plan): https://rziza-house.mouadelqaddar.workers.dev
+Live on Cloudflare Pages (free plan): https://rziza-house.pages.dev
 
-Cloudflare builds from GitHub on every push to `main` and serves the `public/` folder as static files, as set in `wrangler.jsonc`. No build step is needed.
+Cloudflare Pages builds from GitHub on every push to `main` and publishes the `public/` folder, as set by `pages_build_output_dir` in `wrangler.jsonc`. No build step is needed.
 
 The site was originally exported from a Hatchable project (slug `khobz-darna`) on 2026-10-27; that copy is no longer the source of truth.
 
