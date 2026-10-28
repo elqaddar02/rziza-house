@@ -51,8 +51,8 @@ const translations = {
 
     // Histoire
     ourPhilosophy: "NOTRE PHILOSOPHIE",
-    storyTitle: "Le bonheur a souvent<br>le goût du <em>pain chaud.</em>",
-    storyP1: "Chez Rziza House, nous croyons aux choses simples : une pâte bien travaillée, une cuisson soignée et cette odeur familière qui rassemble tout le monde autour de la table.",
+    storyTitle: "Le bonheur a souvent<br>le goût du <em>fait maison.</em>",
+    storyP1: "Chez Rziza House, nous croyons aux choses simples : de bons ingrédients, des gestes faits avec soin et ces saveurs familières qui rassemblent tout le monde autour de la table.",
     storyP2: "Notre inspiration vient de la cuisine marocaine et de ces petits gestes du quotidien qui font qu’une maison est une maison.",
     signature: "Avec amour, chaque jour.",
 
@@ -157,8 +157,8 @@ const translations = {
 
     // Histoire
     ourPhilosophy: "الفكرة ديالنا",
-    storyTitle: "السعادة مرات كتكون<br>فمذاق <em>الخبز سخون.</em>",
-    storyP1: "فدار رزيزة، كنآمنو بالحوايج البسيطة: عجين مخدوم مزيان، طياب بالعناية وريحة كتجمع العائلة كاملة على المائدة.",
+    storyTitle: "السعادة مرات كتكون<br>ف<em>بنة ديال الدار.</em>",
+    storyP1: "فدار رزيزة، كنآمنو بالحوايج البسيطة: مكونات مزيانة، يدين كيخدمو بالعناية، وبنة كتجمع العائلة كاملة على المائدة.",
     storyP2: "الإلهام ديالنا جاي من المطبخ المغربي ومن داكشي البسيط اللي كيخلي الدار عامرة بالمحبة.",
     signature: "بكل حب، كل نهار.",
 
