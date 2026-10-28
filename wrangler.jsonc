@@ -1,0 +1,10 @@
+// Cloudflare settings: the site is plain static files served from public/.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "rziza-house",
+  "compatibility_date": "2026-10-23",
+  "workers_dev": true,
+  "assets": {
+    "directory": "public"
+  }
+}

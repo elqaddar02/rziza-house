@@ -22,7 +22,9 @@ Orders are sent to WhatsApp +212 654 489 425.
 
 ## Deployment
 
-The site will be deployed on Vercel (not live yet). `vercel.json` sets the output directory to `public/` with no build or install step, so in Vercel: **Add New → Project → import `elqaddar02/rziza-house`** and deploy with the defaults. Every push to `main` then redeploys the site.
+Live on Cloudflare (free plan): https://rziza-house.mouadelqaddar.workers.dev
+
+Cloudflare builds from GitHub on every push to `main` and serves the `public/` folder as static files, as set in `wrangler.jsonc`. No build step is needed.
 
 The site was originally exported from a Hatchable project (slug `khobz-darna`) on 2026-10-27; that copy is no longer the source of truth.
 
