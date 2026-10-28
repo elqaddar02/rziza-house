@@ -10,7 +10,7 @@
   --serif: "Playfair Display", Georgia, serif;
   --sans: "DM Sans", Arial, sans-serif;
   --arabic: "Noto Sans Arabic", sans-serif;
-  --arabic-display: "Reem Kufi", "Noto Sans Arabic", sans-serif;
+  --arabic-display: "Amiri", "Noto Sans Arabic", serif;
   --radius: 4px;
 }
 * {
@@ -905,8 +905,18 @@ a.footer-item:hover {
 .rtl .story h2,
 .rtl .cta h2 {
   font-family: var(--arabic-display);
+  font-weight: 700;
   letter-spacing: 0;
-  line-height: 1.55;
+  line-height: 1.5;
+}
+/* Arabic has no italic: highlighted words keep only the colour */
+.rtl em {
+  font-style: normal;
+}
+.rtl h1 em,
+.rtl h2 em,
+.rtl .how h2 em {
+  font-weight: 700;
 }
 .rtl .steps h3,
 .rtl .product-info h3,
