@@ -1,0 +1,3 @@
+# Netlify settings: the site is plain HTML/CSS/JS, so there is no build step.
+[build]
+  publish = "public"

@@ -1,6 +1,6 @@
 # Rziza House
 
-Website source exported from the existing Hatchable project **Rziza House** (slug: `khobz-darna`).
+Website for **Rziza House** (دار رزيزة), a homemade Moroccan bread shop in Salé — orders are sent through WhatsApp.
 
 ## Files
 
@@ -17,7 +17,13 @@ Plain HTML/CSS/JS, no build step: upload the `public/` folder to any static host
 
 Copy a block in `PRODUCTS` in `public/products.js`, give it a new `id`, price, French and Arabic name and description, and put its photo in `public/images/<id>.jpg`.
 
-The live Hatchable project remains the deployment source. This repository is a copy of the site files as exported on 2026-10-27; it does not include Hatchable credentials, deployment history, or database data. Orders are sent to WhatsApp +212 654 489 425.
+Orders are sent to WhatsApp +212 654 489 425.
+
+## Deployment
+
+The site will be deployed on Netlify (not live yet). `netlify.toml` sets the publish directory to `public/` with no build command, so in Netlify: **Add new site → Import from GitHub → `elqaddar02/rziza-house`** and keep the defaults. Every push to `main` then redeploys the site.
+
+The site was originally exported from a Hatchable project (slug `khobz-darna`) on 2026-10-27; that copy is no longer the source of truth.
 
 ## Product photos
 
