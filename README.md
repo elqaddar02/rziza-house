@@ -4,12 +4,13 @@ Website for **Rziza House** (دار رزيزة), a homemade Moroccan bread shop 
 
 ## Files
 
-- `public/products.js` — **shop settings**: WhatsApp number, products, prices. Edit this to add a product or change a price.
+- `public/products.js` — **shop settings**: WhatsApp number, social links (placeholders for now), products, prices. Edit this to add a product or change a price.
 - `public/translations.js` — all French and Arabic texts.
 - `public/app.js` — site logic: product cards, language, basket, WhatsApp order message.
 - `public/index.html` — page structure.
 - `public/theme.css` — styling and responsive layout.
-- `public/images/` — product photos, named after the product id (`khobz.jpg`, ...).
+- `public/images/` — product photos named after the product id (`khobz.jpg`, ...), plus `hero.jpg` and `story.jpg`.
+- `public/favicon.svg` — the logo mark (arch + coiled spiral), also drawn inline in `index.html`.
 
 Plain HTML/CSS/JS, no build step: upload the `public/` folder to any static host.
 
@@ -35,9 +36,11 @@ Current credits (required by the licences while these photos are used):
 - msemen.jpg — "Msemmen" by Juan Emilio Prades Bel, CC BY-SA 4.0
 - harcha.jpg — "Harcha (Homemade)" by Tamorlan, CC BY-SA 3.0
 - batbout.jpg — "Batbout" by مصطفى ملو, CC BY-SA 4.0
+- hero.jpg — "Bread Tafrnaout Morocco" by رشيدة رقي, CC BY-SA 4.0
+- story.jpg — "Khobz" by Meriemou, CC BY-SA 4.0
 
-All from https://commons.wikimedia.org.
+All from https://commons.wikimedia.org. The same credits are shown in the site footer.
 
 ## Prices and delivery
 
-Prices are placeholders, set in `public/products.js` (dirhams). Delivery is offered only in Salé and Rabat.
+Prices are placeholders, set in `public/products.js` (dirhams). Delivery is offered only in Salé and Rabat. Opening hours (8h–20h) are placeholders in `public/translations.js` (`topline2`, `hoursText`).

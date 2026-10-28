@@ -15,10 +15,10 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&h=630&q=80">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2232%22%20fill%3D%22%23565b38%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Tahoma%2Csans-serif%22%20font-size%3D%2234%22%20fill%3D%22%23fff8eb%22%3E%D8%B1%3C%2Ftext%3E%3C%2Fsvg%3E">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap">
   <link rel="stylesheet" href="theme.css">
 
   <script src="products.js" defer></script>
@@ -27,15 +27,34 @@
 </head>
 <body>
 
+<!-- Logo et icônes, réutilisés plus bas avec <use href="#..."> -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="logo-mark" viewBox="0 0 64 64">
+    <path d="M13 60V31C13 18.5 21.5 9 32 9s19 9.5 19 22V60Z" fill="#565b38"/>
+    <path d="M18 60V32C18 22 24.5 14.5 32 14.5S46 22 46 32V60" fill="none" stroke="#d8a77c" stroke-width="1.4"/>
+    <path d="M31 40A1 1 0 0 1 33 40A2.8 2.8 0 0 1 27.4 40A4.6 4.6 0 0 1 36.6 40A6.4 6.4 0 0 1 23.8 40A8.2 8.2 0 0 1 40.2 40" fill="none" stroke="#fff4e6" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-wheat" viewBox="0 0 24 24"><path d="M12 22V7M12 7c-2-1-3-3-3-5 2 1 3 3 3 5Zm0 0c2-1 3-3 3-5-2 1-3 3-3 5Zm0 6c-2.5-.5-4-2.5-4.5-4.5 2.5.5 4 2.5 4.5 4.5Zm0 0c2.5-.5 4-2.5 4.5-4.5-2.5.5-4 2.5-4.5 4.5Zm0 5c-2.5-.5-4-2.5-4.5-4.5 2.5.5 4 2.5 4.5 4.5Zm0 0c2.5-.5 4-2.5 4.5-4.5-2.5.5-4 2.5-4.5 4.5Z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-6.5-5.8-6.5-11.5a6.5 6.5 0 0 1 13 0c0 5.7-6.5 11.5-6.5 11.5Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21.5a6.5 6.5 0 0 0 6.5-6.5c0-4.3-3.2-6.4-4.3-10.5-1 3-3 4.3-3 4.3s-1-1.1-1.2-3C7.7 8 5.5 11.2 5.5 15a6.5 6.5 0 0 0 6.5 6.5Z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 20.5l1.4-4.1A8.3 8.3 0 1 1 8.6 19.4L4 20.5Z"/><path d="M9.2 8.6c-.3 2.9 3.3 6.5 6.2 6.2l.6-1.6-2-1-.9.8c-1-.4-1.9-1.3-2.3-2.3l.8-.9-1-2-1.4.8Z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5.5 8h13l-1.1 12.5H6.6L5.5 8Z"/><path d="M9 10V6.8a3 3 0 0 1 6 0V10"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17" cy="7" r=".6"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.7l.4-3.2h-3.1V8.4c0-.9.3-1.6 1.6-1.6h1.7V4a21 21 0 0 0-2.5-.1c-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5v3.2h2.7V21"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.6 4.2 4.8-1.3-1.3 4.8 4.4 1.8-4.4 1.8 1.3 4.8-4.8-1.3L12 21.5l-2.6-4.2-4.8 1.3 1.3-4.8L1.5 12l4.4-1.8-1.3-4.8 4.8 1.3L12 2.5Z"/></symbol>
+</svg>
+
 <div class="topline">
-  <span data-i18n="topline">Fait maison avec amour à Salé</span>
+  <span data-i18n="topline">Livraison à Salé et Rabat</span>
   <span class="top-dot">✦</span>
-  <span data-i18n="topline2">Le goût authentique du Maroc</span>
+  <span data-i18n="topline2">Commandes tous les jours, 8h – 20h</span>
 </div>
 
-<header class="header">
+<header class="header" id="siteHeader">
   <a class="brand" href="#accueil" aria-label="Rziza House">
-    <span class="brand-mark">ر</span>
+    <svg class="brand-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
     <span class="brand-copy">
       <strong data-i18n="brandName">Rziza House</strong>
       <small data-i18n="brandSub">دار رزيزة · LE GOÛT DE LA MAISON</small>
@@ -43,12 +62,16 @@
   </a>
   <nav class="nav" id="mainNav">
     <a href="#produits" data-i18n="navProducts">Nos pains</a>
+    <a href="#commander" data-i18n="navHow">Commander</a>
     <a href="#histoire" data-i18n="navStory">Notre histoire</a>
     <a href="#contact" data-i18n="navContact">Contact</a>
   </nav>
   <div class="header-actions">
-    <button id="langBtn" class="lang-btn" type="button" data-i18n-aria="langLabel" aria-label="Changer de langue">عربي</button>
+    <button id="langBtn" class="lang-toggle" type="button" data-i18n-aria="langLabel" aria-label="Changer de langue">
+      <span data-lang="fr">FR</span><span data-lang="ar">ع</span>
+    </button>
     <button id="cartBtn" class="cart-btn" type="button">
+      <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
       <span data-i18n="basket">Ma sélection</span>
       <span id="cartCount" class="cart-count">0</span>
     </button>
@@ -63,10 +86,17 @@
       <h1 data-i18n="heroTitle">Un peu de <em>maison</em><br>dans chaque bouchée.</h1>
       <p class="hero-text" data-i18n="heroText">Des pains marocains préparés avec patience, des gestes transmis et beaucoup d’amour. Tout simplement, comme chez nous.</p>
       <div class="hero-buttons">
-        <a class="btn btn-dark" href="#produits"><span data-i18n="discover">Découvrir nos pains</span><span>↗</span></a>
-        <a class="text-link" href="#histoire"><span data-i18n="ourStory">Notre histoire</span><span class="arrow">→</span></a>
+        <a id="heroWhatsapp" class="btn btn-dark" href="#" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+          <span data-i18n="whatsappCta">Commander sur WhatsApp</span>
+        </a>
+        <a class="text-link" href="#produits"><span data-i18n="discover">Découvrir nos pains</span><span class="arrow">→</span></a>
       </div>
-      <div class="hero-note"><span class="note-icon">✳</span><span data-i18n="heroNote">Préparé avec soin · Inspiré de nos traditions</span></div>
+      <ul class="hero-badges">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg><span data-i18n="badgeFresh">Cuit le jour même</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="badgeDelivery">Livraison Salé & Rabat</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="badgeWhatsapp">Commande sur WhatsApp</span></li>
+      </ul>
     </div>
     <div class="hero-visual">
       <div class="hero-photo"></div>
@@ -76,13 +106,13 @@
   </section>
 
   <section class="promise-strip">
-    <div><span class="promise-icon">✳</span><span data-i18n="promise1">Des recettes traditionnelles</span></div>
-    <div><span class="promise-icon">♡</span><span data-i18n="promise2">Préparé avec amour</span></div>
-    <div><span class="promise-icon">⌂</span><span data-i18n="promise3">Livraison à Salé et Rabat</span></div>
+    <div><svg class="promise-icon" aria-hidden="true"><use href="#i-wheat"/></svg><span data-i18n="promise1">Des recettes traditionnelles</span></div>
+    <div><svg class="promise-icon" aria-hidden="true"><use href="#i-heart"/></svg><span data-i18n="promise2">Préparé avec amour</span></div>
+    <div><svg class="promise-icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="promise3">Livraison à Salé et Rabat</span></div>
   </section>
 
   <section class="products section-pad" id="produits">
-    <div class="section-heading">
+    <div class="section-heading" data-reveal>
       <div>
         <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="ourSelection">NOTRE SÉLECTION</span></div>
         <h2 data-i18n="productsTitle">Les bonnes choses<br><em>de chez nous.</em></h2>
@@ -90,12 +120,40 @@
       <p data-i18n="productsIntro">Chaque pièce est préparée avec soin, pour accompagner vos petits-déjeuners, vos repas et vos moments en famille.</p>
     </div>
     <!-- Les cartes produits sont créées par app.js à partir de products.js -->
-    <div class="product-grid" id="productGrid"></div>
+    <div class="product-grid" id="productGrid" data-reveal></div>
     <div class="order-hint">
-      <span class="hint-spark">✳</span>
+      <svg class="hint-icon" aria-hidden="true"><use href="#i-star"/></svg>
       <span data-i18n="orderHint">Choisissez vos favoris, puis envoyez votre sélection sur WhatsApp.</span>
       <button id="orderFromProducts" class="inline-link" type="button" data-i18n="startOrder">Préparer ma commande ↗</button>
     </div>
+  </section>
+
+  <section class="how section-pad" id="commander">
+    <div class="ornament" aria-hidden="true"><span></span><svg><use href="#i-star"/></svg><span></span></div>
+    <div class="how-heading" data-reveal>
+      <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="howEyebrow">SIMPLE COMME BONJOUR</span><span class="eyebrow-line"></span></div>
+      <h2 data-i18n="howTitle">Commander en <em>trois étapes.</em></h2>
+    </div>
+    <ol class="steps" data-reveal>
+      <li>
+        <span class="step-icon"><svg aria-hidden="true"><use href="#i-wheat"/></svg></span>
+        <span class="step-num">01</span>
+        <h3 data-i18n="step1Title">Choisissez vos pains</h3>
+        <p data-i18n="step1Text">Ajoutez vos favoris à votre sélection et choisissez les quantités.</p>
+      </li>
+      <li>
+        <span class="step-icon"><svg aria-hidden="true"><use href="#i-chat"/></svg></span>
+        <span class="step-num">02</span>
+        <h3 data-i18n="step2Title">Envoyez sur WhatsApp</h3>
+        <p data-i18n="step2Text">Votre commande est prête dans un message : il ne reste qu’à l’envoyer.</p>
+      </li>
+      <li>
+        <span class="step-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span>
+        <span class="step-num">03</span>
+        <h3 data-i18n="step3Title">Retrait ou livraison</h3>
+        <p data-i18n="step3Text">Récupérez-la chez nous à Salé, ou faites-vous livrer à Salé ou Rabat.</p>
+      </li>
+    </ol>
   </section>
 
   <section class="story" id="histoire">
@@ -103,38 +161,65 @@
       <div class="story-image-inner"></div>
       <span class="story-label">من دارنا لداركم</span>
     </div>
-    <div class="story-copy">
+    <div class="story-copy" data-reveal>
       <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="ourPhilosophy">NOTRE PHILOSOPHIE</span></div>
       <h2 data-i18n="storyTitle">Le bonheur a souvent<br>le goût du <em>pain chaud.</em></h2>
       <p data-i18n="storyP1">Chez Rziza House, nous croyons aux choses simples : une pâte bien travaillée, une cuisson soignée et cette odeur familière qui rassemble tout le monde autour de la table.</p>
       <p data-i18n="storyP2">Notre inspiration vient de la cuisine marocaine et de ces petits gestes du quotidien qui font qu’une maison est une maison.</p>
       <div class="signature">
-        <span class="signature-mark">ر</span>
+        <svg class="signature-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
         <span><strong data-i18n="brandName">Rziza House</strong><small data-i18n="signature">Avec amour, chaque jour.</small></span>
       </div>
     </div>
   </section>
 
   <section class="cta" id="contact">
-    <div class="cta-decoration">✳</div>
-    <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="freshFromUs">UN PETIT GOÛT DE CHEZ NOUS</span></div>
-    <h2 data-i18n="ctaTitle">On vous prépare<br>quelque chose de <em>bon ?</em></h2>
-    <p data-i18n="ctaText">Envoyez-nous votre sélection sur WhatsApp. Nous confirmerons ensemble les quantités, les prix et la disponibilité.</p>
-    <a id="contactWhatsapp" class="btn btn-cream" href="#" target="_blank" rel="noopener"><span data-i18n="whatsappCta">Commander sur WhatsApp</span><span>↗</span></a>
-    <small data-i18n="areaNote">📍 Salé, Maroc · Livraison à Salé et Rabat</small>
+    <div class="cta-inner" data-reveal>
+      <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="freshFromUs">UN PETIT GOÛT DE CHEZ NOUS</span><span class="eyebrow-line"></span></div>
+      <h2 data-i18n="ctaTitle">On vous prépare<br>quelque chose de <em>bon ?</em></h2>
+      <p data-i18n="ctaText">Envoyez-nous votre sélection sur WhatsApp. Nous confirmerons ensemble les quantités, les prix et la disponibilité.</p>
+      <a id="contactWhatsapp" class="btn btn-cream" href="#" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+        <span data-i18n="whatsappCta">Commander sur WhatsApp</span>
+      </a>
+      <p class="cta-phone"><span data-i18n="orCall">ou appelez-nous :</span> <a data-phone-link href="#" dir="ltr"></a></p>
+      <small data-i18n="areaNote">📍 Salé, Maroc · Livraison à Salé et Rabat</small>
+    </div>
   </section>
 </main>
 
 <footer class="footer">
-  <a class="brand footer-brand" href="#accueil">
-    <span class="brand-mark">ر</span>
-    <span class="brand-copy">
-      <strong data-i18n="brandName">Rziza House</strong>
-      <small data-i18n="footerSub">دار رزيزة</small>
-    </span>
-  </a>
-  <span data-i18n="footerLine">Fait avec amour, inspiré par nos traditions.</span>
-  <a href="#accueil" class="back-top" data-i18n="backTop">Retour en haut ↑</a>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="brand footer-brand" href="#accueil">
+        <svg class="brand-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <span class="brand-copy">
+          <strong data-i18n="brandName">Rziza House</strong>
+          <small data-i18n="footerSub">دار رزيزة</small>
+        </span>
+      </a>
+      <p data-i18n="footerLine">Fait avec amour, inspiré par nos traditions.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footerContact">Contact</h4>
+      <a class="footer-item" data-phone-link href="#" dir="ltr"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span data-phone></span></a>
+      <p class="footer-item"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="footerZones">Salé · Rabat</span></p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footerHours">Horaires</h4>
+      <p class="footer-item"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="hoursText">Tous les jours · 8h – 20h</span></p>
+      <div class="socials">
+        <a id="instagramLink" href="#" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+        <a id="facebookLink" href="#" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+        <span class="social-handle">@rzizahouse</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year">2026</span> Rziza House</span>
+    <span class="credits">Photos : Wikimedia Commons (CC BY-SA) — Bidiyoutchi, Juan Emilio Prades Bel, Tamorlan, مصطفى ملو, رشيدة رقي, Meriemou</span>
+    <a href="#accueil" class="back-top" data-i18n="backTop">Retour en haut ↑</a>
+  </div>
 </footer>
 
 <!-- Panier -->
@@ -150,7 +235,7 @@
 
     <div id="cartItems" class="cart-items"></div>
     <div id="cartEmpty" class="cart-empty">
-      <span>♡</span>
+      <svg class="cart-empty-icon" aria-hidden="true"><use href="#i-bag"/></svg>
       <p data-i18n="emptyCart">Votre sélection est encore vide.</p>
       <button id="browseBtn" class="inline-link" type="button" data-i18n="browseProducts">Découvrir les pains ↗</button>
     </div>
@@ -189,15 +274,18 @@
       </div>
 
       <p data-i18n="priceNote">Prix indicatifs, hors frais de livraison. Tout est confirmé sur WhatsApp.</p>
-      <button id="sendOrder" class="btn btn-dark order-submit" type="button"><span data-i18n="sendWhatsapp">Envoyer sur WhatsApp</span><span>↗</span></button>
+      <button id="sendOrder" class="btn btn-dark order-submit" type="button">
+        <span data-i18n="sendWhatsapp">Envoyer sur WhatsApp</span>
+        <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+      </button>
     </div>
   </section>
 </div>
 
 <button id="floatOrder" class="float-order" type="button">
+  <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
   <span data-i18n="orderShortcut">Commander</span>
   <span id="floatCount" class="float-count" hidden>0</span>
-  <span>↗</span>
 </button>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 

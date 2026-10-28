@@ -4,11 +4,12 @@
 const translations = {
   fr: {
     // En-tête et marque
-    topline: "Fait maison avec amour à Salé",
-    topline2: "Le goût authentique du Maroc",
+    topline: "Livraison à Salé et Rabat",
+    topline2: "Commandes tous les jours, 8h – 20h", // horaires provisoires
     brandName: "Rziza House",
     brandSub: "دار رزيزة · LE GOÛT DE LA MAISON",
     navProducts: "Nos pains",
+    navHow: "Commander",
     navStory: "Notre histoire",
     navContact: "Contact",
     basket: "Ma sélection",
@@ -20,8 +21,9 @@ const translations = {
     heroTitle: "Un peu de <em>maison</em><br>dans chaque bouchée.",
     heroText: "Des pains marocains préparés avec patience, des gestes transmis et beaucoup d’amour. Tout simplement, comme chez nous.",
     discover: "Découvrir nos pains",
-    ourStory: "Notre histoire",
-    heroNote: "Préparé avec soin · Inspiré de nos traditions",
+    badgeFresh: "Cuit le jour même",
+    badgeDelivery: "Livraison Salé & Rabat",
+    badgeWhatsapp: "Commande sur WhatsApp",
     heroCaption: "Le vrai goût du fait maison",
     promise1: "Des recettes traditionnelles",
     promise2: "Préparé avec amour",
@@ -37,6 +39,16 @@ const translations = {
     added: "Ajouté à votre sélection",
     currency: "DH",
 
+    // Comment commander
+    howEyebrow: "SIMPLE COMME BONJOUR",
+    howTitle: "Commander en <em>trois étapes.</em>",
+    step1Title: "Choisissez vos pains",
+    step1Text: "Ajoutez vos favoris à votre sélection et choisissez les quantités.",
+    step2Title: "Envoyez sur WhatsApp",
+    step2Text: "Votre commande est prête dans un message : il ne reste qu’à l’envoyer.",
+    step3Title: "Retrait ou livraison",
+    step3Text: "Récupérez-la chez nous à Salé, ou faites-vous livrer à Salé ou Rabat.",
+
     // Histoire
     ourPhilosophy: "NOTRE PHILOSOPHIE",
     storyTitle: "Le bonheur a souvent<br>le goût du <em>pain chaud.</em>",
@@ -50,9 +62,14 @@ const translations = {
     ctaText: "Envoyez-nous votre sélection sur WhatsApp. Nous confirmerons ensemble les quantités, les prix et la disponibilité.",
     whatsappCta: "Commander sur WhatsApp",
     contactMsg: "Salam Rziza House ! Je voudrais connaître vos produits et disponibilités.",
+    orCall: "ou appelez-nous :",
     areaNote: "📍 Salé, Maroc · Livraison à Salé et Rabat",
     footerSub: "دار رزيزة",
     footerLine: "Fait avec amour, inspiré par nos traditions.",
+    footerContact: "Contact",
+    footerZones: "Livraison à Salé · Rabat",
+    footerHours: "Horaires",
+    hoursText: "Tous les jours · 8h – 20h", // horaires provisoires
     backTop: "Retour en haut ↑",
     orderShortcut: "Commander",
 
@@ -93,11 +110,12 @@ const translations = {
 
   ar: {
     // En-tête et marque
-    topline: "صنع منزلي بكل حب في سلا",
-    topline2: "المذاق المغربي الأصيل",
+    topline: "التوصيل لسلا والرباط",
+    topline2: "الطلبات كل نهار، من 8 الصباح حتى 8 الليل",
     brandName: "دار رزيزة",
     brandSub: "RZIZA HOUSE · مذاق الدار",
     navProducts: "منتوجاتنا",
+    navHow: "كيفاش تطلب",
     navStory: "حكايتنا",
     navContact: "تواصل معنا",
     basket: "اختياراتي",
@@ -109,8 +127,9 @@ const translations = {
     heroTitle: "شوية ديال <em>الدار</em><br>فكل لقمة.",
     heroText: "خبز مغربي محضر بالصبر، بطرق تقليدية وبزاف ديال الحب. ببساطة، بحال ديال دارنا.",
     discover: "اكتشفوا منتوجاتنا",
-    ourStory: "حكايتنا",
-    heroNote: "تحضير بعناية · مستوحى من تقاليدنا",
+    badgeFresh: "مطيب نفس النهار",
+    badgeDelivery: "التوصيل لسلا والرباط",
+    badgeWhatsapp: "الطلب عبر واتساب",
     heroCaption: "المذاق الحقيقي ديال الدار",
     promise1: "وصفات تقليدية",
     promise2: "محضر بكل حب",
@@ -126,6 +145,16 @@ const translations = {
     added: "تزاد للاختيارات ديالكم",
     currency: "درهم",
 
+    // Comment commander
+    howEyebrow: "ساهلة بزاف",
+    howTitle: "الطلب فـ<em>ثلاث خطوات.</em>",
+    step1Title: "ختاروا الخبز ديالكم",
+    step1Text: "زيدوا اللي عجبكم للاختيارات ديالكم وختاروا الكمية.",
+    step2Title: "صيفطوا عبر واتساب",
+    step2Text: "الطلب ديالكم كيوجد فرسالة واجدة، غير صيفطوها.",
+    step3Title: "الاستلام ولا التوصيل",
+    step3Text: "جيو خودوه من عندنا فسلا، ولا نوصلوه ليكم لسلا ولا الرباط.",
+
     // Histoire
     ourPhilosophy: "الفكرة ديالنا",
     storyTitle: "السعادة مرات كتكون<br>فمذاق <em>الخبز سخون.</em>",
@@ -139,9 +168,14 @@ const translations = {
     ctaText: "صيفطوا لينا الاختيارات ديالكم عبر واتساب. نأكدو معاكم الكمية والثمن والتوفر.",
     whatsappCta: "طلب عبر واتساب",
     contactMsg: "السلام عليكم دار رزيزة! بغيت نعرف المنتوجات ديالكم والتوفر.",
+    orCall: "ولا عيطو لينا:",
     areaNote: "📍 سلا، المغرب · التوصيل لسلا والرباط",
     footerSub: "RZIZA HOUSE",
     footerLine: "محضر بكل حب، مستوحى من تقاليدنا.",
+    footerContact: "تواصل",
+    footerZones: "التوصيل لسلا · الرباط",
+    footerHours: "الأوقات",
+    hoursText: "كل نهار · من 8 الصباح حتى 8 الليل",
     backTop: "الرجوع للفوق ↑",
     orderShortcut: "طلب",
 

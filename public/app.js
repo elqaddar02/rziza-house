@@ -65,6 +65,12 @@ function whatsappLink(message) {
   return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
 }
 
+// "212654489425" -> "+212 6 54 48 94 25"
+function displayPhone(number) {
+  const local = number.slice(3);
+  return "+" + number.slice(0, 3) + " " + local[0] + " " + local.slice(1).replace(/(\d{2})(?=\d)/g, "$1 ");
+}
+
 // Creates an element: el("span", { className: "x" }, "text", childElement)
 function el(tag, props = {}, ...children) {
   const node = document.createElement(tag);
@@ -91,13 +97,13 @@ function placeholderImage(product) {
 
 function renderProducts() {
   const cards = PRODUCTS.map((product) => {
-    const image = el("div", { className: "product-image" });
-    image.style.backgroundImage = `url("images/${product.id}.jpg"), url("${placeholderImage(product)}")`;
+    const photo = el("div", { className: "product-photo" });
+    photo.style.backgroundImage = `url("images/${product.id}.jpg"), url("${placeholderImage(product)}")`;
+    const image = el("div", { className: "product-image" }, photo);
     if (product.tag) image.append(el("span", { className: "product-tag" }, product.tag[lang]));
-    const add = el("button", { className: "add-btn", type: "button" }, "+");
-    add.dataset.add = product.id;
-    add.setAttribute("aria-label", t("addLabel") + " " + product.name[lang]);
-    image.append(add);
+    const actions = el("div", { className: "card-actions" });
+    actions.dataset.card = product.id;
+    image.append(actions);
 
     const info = el(
       "div",
@@ -108,6 +114,30 @@ function renderProducts() {
     return el("article", { className: "product-card" }, image, info);
   });
   $("#productGrid").replaceChildren(...cards);
+  updateCardActions();
+}
+
+// Bottom of each photo: "+ Ajouter" when the product is not selected, "− 2 +" once it is.
+// Both "+" buttons carry data-add, the "−" carries data-sub (see the grid click handler).
+function updateCardActions() {
+  document.querySelectorAll(".card-actions").forEach((actions) => {
+    const id = actions.dataset.card;
+    const name = productName(id);
+    if (!cart[id]) {
+      const add = el("button", { className: "add-btn", type: "button" }, "+ " + t("addLabel"));
+      add.dataset.add = id;
+      add.setAttribute("aria-label", t("addLabel") + " " + name);
+      actions.replaceChildren(add);
+      return;
+    }
+    const minus = el("button", { type: "button" }, "−");
+    minus.dataset.sub = id;
+    minus.setAttribute("aria-label", t("decrease") + " " + name);
+    const plus = el("button", { type: "button" }, "+");
+    plus.dataset.add = id;
+    plus.setAttribute("aria-label", t("increase") + " " + name);
+    actions.replaceChildren(el("div", { className: "card-stepper" }, minus, el("span", {}, cart[id]), plus));
+  });
 }
 
 // ---------- Language ----------
@@ -118,7 +148,9 @@ function setLanguage(next) {
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   document.body.classList.toggle("rtl", lang === "ar");
-  $("#langBtn").textContent = lang === "fr" ? "عربي" : "Français";
+  document.querySelectorAll("#langBtn [data-lang]").forEach((option) => {
+    option.classList.toggle("active", option.dataset.lang === lang);
+  });
 
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const value = t(node.dataset.i18n);
@@ -134,6 +166,7 @@ function setLanguage(next) {
   });
 
   $("#contactWhatsapp").href = whatsappLink(t("contactMsg"));
+  $("#heroWhatsapp").href = whatsappLink(t("contactMsg"));
   renderProducts();
   renderCart();
 }
@@ -223,6 +256,7 @@ function renderCart() {
   $("#orderDetails").hidden = empty;
   $("#cartTotalValue").textContent = formatPrice(cartTotal());
   updateCount();
+  updateCardActions();
 }
 
 function openCart() {
@@ -326,10 +360,51 @@ function toggleMenu(open) {
 
 // ---------- Events ----------
 
+// The card buttons are re-created after each change, so focus is put back on the same spot.
 $("#productGrid").addEventListener("click", (event) => {
-  const button = event.target.closest("[data-add]");
-  if (button) addItem(button.dataset.add);
+  const add = event.target.closest("[data-add]");
+  const sub = event.target.closest("[data-sub]");
+  if (!add && !sub) return;
+  const id = add ? add.dataset.add : sub.dataset.sub;
+  if (add) addItem(id);
+  else changeQty(id, -1);
+  if (event.detail !== 0) return; // mouse/touch: no need to move focus
+  const actions = document.querySelector(`.card-actions[data-card="${id}"]`);
+  const target = cart[id] && sub ? actions.querySelector("[data-sub]") : actions.querySelector("[data-add]");
+  if (target) target.focus();
 });
+
+// Header gets a shadow once the page is scrolled.
+const header = $("#siteHeader");
+const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+// Sections fade in when they come into view (skipped if the browser can't observe them).
+if ("IntersectionObserver" in window) {
+  document.body.classList.add("reveal-ready");
+  const observer = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      }),
+    { threshold: 0.12 },
+  );
+  document.querySelectorAll("[data-reveal]").forEach((node) => observer.observe(node));
+}
+
+// Phone number, social links and year
+document.querySelectorAll("[data-phone-link]").forEach((link) => {
+  link.href = "tel:+" + WHATSAPP_NUMBER;
+  if (!link.querySelector("[data-phone]")) link.textContent = displayPhone(WHATSAPP_NUMBER);
+});
+document.querySelectorAll("[data-phone]").forEach((node) => (node.textContent = displayPhone(WHATSAPP_NUMBER)));
+$("#instagramLink").href = SOCIAL_LINKS.instagram;
+$("#facebookLink").href = SOCIAL_LINKS.facebook;
+$("#year").textContent = new Date().getFullYear();
 
 ["#custName", "#custAddress", "#custWhen"].forEach((selector) => $(selector).addEventListener("input", saveDetails));
 document.querySelectorAll('input[name="mode"], input[name="city"]').forEach((radio) =>

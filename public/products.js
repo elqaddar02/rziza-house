@@ -4,6 +4,12 @@
 // Numéro qui reçoit les commandes : indicatif pays inclus, sans + ni espaces.
 const WHATSAPP_NUMBER = "212654489425";
 
+// Réseaux sociaux : liens provisoires ("#") à remplacer par les vrais comptes.
+const SOCIAL_LINKS = {
+  instagram: "#",
+  facebook: "#",
+};
+
 // Un bloc = un produit, affiché dans cet ordre sur le site.
 // Pour ajouter un produit : copiez un bloc, donnez-lui un nouvel id,
 // et mettez sa photo dans images/<id>.jpg (sinon une illustration s'affiche).
