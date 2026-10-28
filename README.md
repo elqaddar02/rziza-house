@@ -8,3 +8,7 @@ Website source exported from the existing Hatchable project **Rziza House** (slu
 - `public/theme.css` — site styling and responsive layout.
 
 The live Hatchable project remains the deployment source. This repository is a copy of the site files as exported on 2026-10-27; it does not include Hatchable credentials, deployment history, or database data. The WhatsApp contact in the current site is still a placeholder and should be updated before accepting orders.
+
+## Product photos
+
+Put real photos in `public/images/` named `khobz.jpg`, `msemen.jpg`, `harcha.jpg` and `batbout.jpg` (portrait, about 700×800). Until a photo exists, the product card shows a drawn placeholder with the bread's name.
