@@ -12,7 +12,7 @@ Website for **Rziza House** (دار رزيزة), a homemade Moroccan bread shop 
 - `public/images/` — product photos named after the product id (`khobz.jpg`, ...), plus `hero.jpg` and `story.jpg`.
 - `public/favicon.svg` — the logo mark (arch + coiled spiral), also drawn inline in `index.html`.
 
-Plain HTML/CSS/JS, no build step: upload the `public/` folder to any static host.
+Plain HTML/CSS/JS, no build step: the `public/` folder can be served by any static host.
 
 ### Adding a product
 
@@ -22,7 +22,7 @@ Orders are sent to WhatsApp +212 654 489 425.
 
 ## Deployment
 
-The site will be deployed on Netlify (not live yet). `netlify.toml` sets the publish directory to `public/` with no build command, so in Netlify: **Add new site → Import from GitHub → `elqaddar02/rziza-house`** and keep the defaults. Every push to `main` then redeploys the site.
+The site will be deployed on Vercel (not live yet). `vercel.json` sets the output directory to `public/` with no build or install step, so in Vercel: **Add New → Project → import `elqaddar02/rziza-house`** and deploy with the defaults. Every push to `main` then redeploys the site.
 
 The site was originally exported from a Hatchable project (slug `khobz-darna`) on 2026-10-27; that copy is no longer the source of truth.
 
