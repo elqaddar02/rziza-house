@@ -4,8 +4,18 @@ Website source exported from the existing Hatchable project **Rziza House** (slu
 
 ## Files
 
-- `public/index.html` — French/Arabic bakery storefront, product selection, basket, and WhatsApp order links.
-- `public/theme.css` — site styling and responsive layout.
+- `public/products.js` — **shop settings**: WhatsApp number, products, prices. Edit this to add a product or change a price.
+- `public/translations.js` — all French and Arabic texts.
+- `public/app.js` — site logic: product cards, language, basket, WhatsApp order message.
+- `public/index.html` — page structure.
+- `public/theme.css` — styling and responsive layout.
+- `public/images/` — product photos, named after the product id (`khobz.jpg`, ...).
+
+Plain HTML/CSS/JS, no build step: upload the `public/` folder to any static host.
+
+### Adding a product
+
+Copy a block in `PRODUCTS` in `public/products.js`, give it a new `id`, price, French and Arabic name and description, and put its photo in `public/images/<id>.jpg`.
 
 The live Hatchable project remains the deployment source. This repository is a copy of the site files as exported on 2026-10-27; it does not include Hatchable credentials, deployment history, or database data. Orders are sent to WhatsApp +212 654 489 425.
 
@@ -24,4 +34,4 @@ All from https://commons.wikimedia.org.
 
 ## Prices and delivery
 
-Prices are placeholders, set in `PRICES` at the top of the script in `public/index.html` (dirhams). Delivery is offered only in Salé and Rabat.
+Prices are placeholders, set in `public/products.js` (dirhams). Delivery is offered only in Salé and Rabat.
