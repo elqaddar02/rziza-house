@@ -239,14 +239,53 @@ function changeQty(id, delta, focusSelector) {
   if (focusSelector) (document.querySelector(focusSelector) || $("#closeCart")).focus();
 }
 
-function addItem(id) {
+function addItem(id, photo) {
   changeQty(id, 1);
   showToast(productName(id) + " · " + t("added"));
+  flyToBag(photo, bumpBag);
+}
 
-  const count = $("#cartCount");
-  count.classList.remove("bump");
-  void count.offsetWidth; // restart the animation
-  count.classList.add("bump");
+function bumpBag() {
+  [$("#cartCount"), $("#cartBtn")].forEach((node) => {
+    node.classList.remove("bump");
+    void node.offsetWidth; // restart the animation
+    node.classList.add("bump");
+  });
+}
+
+// A round copy of the product photo jumps in an arc from the card into the bag, then calls done.
+function flyToBag(photo, done) {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!photo || reduceMotion || !Element.prototype.animate) return done();
+
+  const from = photo.getBoundingClientRect();
+  const to = $("#cartCount").getBoundingClientRect();
+  const size = Math.min(90, from.width * 0.45);
+  const startX = from.left + from.width / 2 - size / 2;
+  const startY = from.top + from.height / 2 - size / 2;
+  const dx = to.left + to.width / 2 - (startX + size / 2);
+  const dy = to.top + to.height / 2 - (startY + size / 2);
+  const lift = Math.min(160, Math.abs(dy) * 0.35 + 60); // height of the jump above the straight line
+
+  const flyer = el("div", { className: "fly-item" });
+  flyer.style.cssText = `left:${startX}px;top:${startY}px;width:${size}px;height:${size}px;background-image:${photo.style.backgroundImage}`;
+  document.body.append(flyer);
+
+  const flight = flyer.animate(
+    [
+      { transform: "translate(0, 0) scale(0.6)", opacity: 0.9, easing: "ease-out" },
+      { transform: "translate(0, -18px) scale(1.05)", opacity: 1, offset: 0.15, easing: "ease-out" },
+      { transform: `translate(${dx * 0.5}px, ${dy * 0.5 - lift}px) scale(0.75)`, offset: 0.55, easing: "ease-in" },
+      { transform: `translate(${dx}px, ${dy}px) scale(0.18)`, opacity: 0.7 },
+    ],
+    { duration: 750, fill: "forwards" },
+  );
+  flight.finished
+    .catch(() => {}) // cancelled: still clean up
+    .then(() => {
+      flyer.remove();
+      done();
+    });
 }
 
 function cartRow(id) {
@@ -387,7 +426,7 @@ $("#productGrid").addEventListener("click", (event) => {
   const sub = event.target.closest("[data-sub]");
   if (!add && !sub) return;
   const id = add ? add.dataset.add : sub.dataset.sub;
-  if (add) addItem(id);
+  if (add) addItem(id, add.closest(".product-card").querySelector(".product-photo"));
   else changeQty(id, -1);
   if (event.detail !== 0) return; // mouse/touch: no need to move focus
   const actions = document.querySelector(`.card-actions[data-card="${id}"]`);

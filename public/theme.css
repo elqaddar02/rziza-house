@@ -1004,6 +1004,29 @@ a.footer-item:hover {
     transform: scale(1.35);
   }
 }
+.cart-btn.bump {
+  animation: bag-catch 0.45s ease-out;
+}
+@keyframes bag-catch {
+  30% {
+    transform: translateY(3px) scale(1.06, 0.94);
+  }
+  65% {
+    transform: translateY(-2px) scale(0.98, 1.03);
+  }
+}
+/* Product photo flying into the bag (see flyToBag in app.js) */
+.fly-item {
+  position: fixed;
+  z-index: 60;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #fff8e9;
+  box-shadow: 0 10px 24px #3a33203d;
+  pointer-events: none;
+  will-change: transform;
+}
 .toast {
   position: fixed;
   left: 50%;
