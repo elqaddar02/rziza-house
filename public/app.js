@@ -30,7 +30,7 @@ for (const id in savedCart) {
 }
 
 let lang = store.get("rziza-lang") || "ar";
-if (!translations[lang]) lang = "fr";
+if (!translations[lang]) lang = "ar";
 
 let lastFocus = null;
 let toastTimer;
