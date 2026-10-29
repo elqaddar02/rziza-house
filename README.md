@@ -9,7 +9,7 @@ Website for **Rziza House** (دار رزيزة), a homemade Moroccan bread shop 
 - `public/app.js` — site logic: product cards, language, basket, WhatsApp order message.
 - `public/index.html` — page structure.
 - `public/theme.css` — styling and responsive layout.
-- `public/images/` — product photos named after the product id (`khobz.jpg`, ...), plus `hero.jpg` and `story.jpg`.
+- `public/images/` — product photos named after the product id (`khobz.jpg`, ...), plus `hero.jpg`, `story.jpg` and `og.jpg` (the 1200×630 image shown when the link is shared).
 - `public/favicon.svg` — the logo mark (arch + coiled spiral), also drawn inline in `index.html`.
 
 Plain HTML/CSS/JS, no build step: the `public/` folder can be served by any static host.

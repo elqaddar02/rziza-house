@@ -209,12 +209,6 @@ function addItem(id) {
   count.classList.remove("bump");
   void count.offsetWidth; // restart the animation
   count.classList.add("bump");
-
-  const button = document.querySelector(`[data-add="${id}"]`);
-  if (button) {
-    button.classList.add("added");
-    setTimeout(() => button.classList.remove("added"), 500);
-  }
 }
 
 function cartRow(id) {
