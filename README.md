@@ -32,6 +32,8 @@ The site was originally exported from a Hatchable project (slug `khobz-darna`) o
 
 Placeholder photos from Wikimedia Commons are in `public/images/` (`khobz.jpg`, `msemen.jpg`, `harcha.jpg`, `batbout.jpg`). Replace them with your own photos using the same file names. If a file is missing, the card shows a drawn placeholder with the bread name.
 
+The site prefers lighter WebP copies when they exist: `<id>.webp` (640 px wide) for products, and `hero.webp` / `story.webp` (1024 px) plus `hero-640.webp` / `story-640.webp` for phones. **When you replace a photo, delete or regenerate its `.webp` copies**, otherwise the old photo keeps showing. A product with only a `.jpg` works fine, just heavier. Product and story photos load only when they come close to the screen.
+
 Current credits (required by the licences while these photos are used):
 
 - khobz.jpg — "The Moroccan bread" by Bidiyoutchi, CC BY-SA 4.0

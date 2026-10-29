@@ -93,12 +93,51 @@ function placeholderImage(product) {
   return "data:image/svg+xml," + encodeURIComponent(svg);
 }
 
+// Photos below the fold are only downloaded when they get close to the screen.
+const lazyObserver =
+  "IntersectionObserver" in window
+    ? new IntersectionObserver(
+        (entries) =>
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              lazyObserver.unobserve(entry.target);
+              entry.target.lazyLoad();
+            }
+          }),
+        { rootMargin: "300px" },
+      )
+    : null;
+
+function whenNearScreen(node, load) {
+  if (!lazyObserver) return load();
+  node.lazyLoad = load;
+  lazyObserver.observe(node);
+}
+
+// images/<id>.webp if it exists, else images/<id>.jpg, else the drawn placeholder stays.
+const photoSources = {};
+
+function loadProductPhoto(node, id) {
+  const show = (src) => (node.style.backgroundImage = `url("${src}")`);
+  if (photoSources[id]) return show(photoSources[id]);
+  const tryNext = (sources) => {
+    if (!sources.length) return;
+    const img = new Image();
+    img.onload = () => show((photoSources[id] = sources[0]));
+    img.onerror = () => tryNext(sources.slice(1));
+    img.src = sources[0];
+  };
+  tryNext([`images/${id}.webp`, `images/${id}.jpg`]);
+}
+
 // ---------- Product cards ----------
 
 function renderProducts() {
+  if (lazyObserver) document.querySelectorAll(".product-photo").forEach((node) => lazyObserver.unobserve(node));
   const cards = PRODUCTS.map((product) => {
     const photo = el("div", { className: "product-photo" });
-    photo.style.backgroundImage = `url("images/${product.id}.jpg"), url("${placeholderImage(product)}")`;
+    photo.style.backgroundImage = `url("${placeholderImage(product)}")`;
+    whenNearScreen(photo, () => loadProductPhoto(photo, product.id));
     const image = el("div", { className: "product-image" }, photo);
     if (product.tag) image.append(el("span", { className: "product-tag" }, product.tag[lang]));
     const actions = el("div", { className: "card-actions" });
@@ -377,6 +416,9 @@ if ("IntersectionObserver" in window) {
   );
   document.querySelectorAll("[data-reveal]").forEach((node) => observer.observe(node));
 }
+
+const storyPhoto = $(".story-image-inner");
+whenNearScreen(storyPhoto, () => storyPhoto.classList.add("loaded"));
 
 // Phone number, social links and year
 document.querySelectorAll("[data-phone-link]").forEach((link) => {
