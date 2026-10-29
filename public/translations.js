@@ -173,7 +173,7 @@ const translations = {
     footerZones: "التوصيل لسلا · الرباط",
     footerHours: "الأوقات",
     hoursText: "كل نهار · من 8 الصباح حتى 8 الليل",
-    backTop: "الرجوع للأعلى ↑",
+    backTop: "الرجوع إلى الأعلى ↑",
     orderShortcut: "طلب",
 
     // Panier
