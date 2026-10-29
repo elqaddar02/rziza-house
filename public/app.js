@@ -29,7 +29,7 @@ for (const id in savedCart) {
   if (productById[id] && qty > 0) cart[id] = Math.min(qty, 99);
 }
 
-let lang = store.get("rziza-lang") || ((navigator.language || "").startsWith("ar") ? "ar" : "fr");
+let lang = store.get("rziza-lang") || "ar";
 if (!translations[lang]) lang = "fr";
 
 let lastFocus = null;
@@ -144,7 +144,6 @@ function updateCardActions() {
 
 function setLanguage(next) {
   lang = next;
-  store.set("rziza-lang", lang);
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   document.body.classList.toggle("rtl", lang === "ar");
@@ -418,7 +417,10 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-$("#langBtn").addEventListener("click", () => setLanguage(lang === "fr" ? "ar" : "fr"));
+$("#langBtn").addEventListener("click", () => {
+  setLanguage(lang === "fr" ? "ar" : "fr");
+  store.set("rziza-lang", lang);
+});
 $("#cartBtn").addEventListener("click", openCart);
 $("#orderFromProducts").addEventListener("click", openCart);
 $("#closeCart").addEventListener("click", closeCart);
