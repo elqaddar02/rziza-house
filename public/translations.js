@@ -7,7 +7,7 @@ const translations = {
     topline: "Livraison à Salé et Rabat",
     topline2: "Commandes tous les jours, 8h – 20h", // horaires provisoires
     brandName: "Rziza House",
-    brandSub: "دار رزيزة · LE GOÛT DE LA MAISON",
+    brandSub: "<span lang=\"ar\">دار رزيزة</span> · LE GOÛT DE LA MAISON",
     navProducts: "Nos produits",
     navHow: "Commander",
     navStory: "Notre histoire",
@@ -64,7 +64,7 @@ const translations = {
     contactMsg: "Salam Rziza House ! Je voudrais connaître vos produits et disponibilités.",
     orCall: "ou appelez-nous :",
     areaNote: "📍 Salé, Maroc · Livraison à Salé et Rabat",
-    footerSub: "دار رزيزة",
+    footerSub: "<span lang=\"ar\">دار رزيزة</span>",
     footerLine: "Fait avec amour, inspiré par nos traditions.",
     footerContact: "Contact",
     footerZones: "Livraison à Salé · Rabat",

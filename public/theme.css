@@ -889,7 +889,8 @@ a.footer-item:hover {
 .rtl .footer {
   direction: rtl;
 }
-.rtl .brand-copy small {
+.rtl .brand-copy small,
+.brand-copy small [lang="ar"] {
   letter-spacing: 0;
 }
 .rtl .hero h1,
