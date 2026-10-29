@@ -42,3 +42,6 @@ const PRODUCTS = [
     description: { fr: "Moelleux, parfait à partager", ar: "رطب، مزيان للحشو" },
   },
 ];
+
+// Also read by the WhatsApp catalogue feed (functions/catalogue.csv.js); ignored by the browser.
+if (typeof module !== "undefined") module.exports = { PRODUCTS, WHATSAPP_NUMBER };

@@ -24,7 +24,21 @@ Orders are sent to WhatsApp +212 654 489 425.
 
 Live on Cloudflare Pages (free plan): https://rziza-house.pages.dev
 
-Cloudflare Pages builds from GitHub on every push to `main` and publishes the `public/` folder, as set by `pages_build_output_dir` in `wrangler.jsonc`. No build step is needed.
+Cloudflare Pages builds from GitHub on every push to `main` and publishes the `public/` folder, as set by `pages_build_output_dir` in `wrangler.jsonc`. No build step is needed. Files in `functions/` run on Cloudflare (Pages Functions).
+
+To try the site locally with the functions: `npx wrangler pages dev` (then open http://localhost:8788).
+
+## WhatsApp catalogue
+
+`functions/catalogue.csv.js` serves https://rziza-house.pages.dev/catalogue.csv, a product feed built from `public/products.js` (Arabic · French name, description, price in MAD, photo `images/<id>.jpg`). Once Meta reads it, the WhatsApp catalogue follows the website: change a product in `products.js`, push, and the catalogue updates at the next daily fetch.
+
+One-time setup (on Meta's side, menu names can vary slightly):
+
+1. In **Meta Commerce Manager** (business.facebook.com/commerce), create a catalogue of type *E-commerce*.
+2. In the catalogue: **Data sources → Add items → Data feed → Scheduled feed**, paste `https://rziza-house.pages.dev/catalogue.csv`, repeat **daily**, currency **MAD**.
+3. Connect the catalogue to the WhatsApp Business number (WhatsApp Manager → **Catalogue**, or in the app under *Business tools → Catalogue* once the WhatsApp account is linked to the same Meta Business account).
+
+Product photos in the feed must be JPG and at least 500×500 px (the current ones are).
 
 The site was originally exported from a Hatchable project (slug `khobz-darna`) on 2026-10-27; that copy is no longer the source of truth.
 
