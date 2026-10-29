@@ -155,8 +155,8 @@
       <li>
         <span class="step-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span>
         <span class="step-num">03</span>
-        <h3 data-i18n="step3Title">Retrait ou livraison</h3>
-        <p data-i18n="step3Text">Récupérez-la chez nous à Salé, ou faites-vous livrer à Salé ou Rabat.</p>
+        <h3 data-i18n="step3Title">On vous livre</h3>
+        <p data-i18n="step3Text">Nous livrons votre commande chez vous, à Salé ou à Rabat.</p>
       </li>
     </ol>
   </section>
@@ -222,7 +222,7 @@
   </div>
   <div class="footer-bottom">
     <span>© <span id="year">2026</span> Rziza House</span>
-    <span class="credits">Photos : Wikimedia Commons (CC BY-SA) — Bidiyoutchi, Juan Emilio Prades Bel, Tamorlan, مصطفى ملو, رشيدة رقي, Meriemou</span>
+    <span class="credits">Photos : Wikimedia Commons (CC BY-SA) — Bidiyoutchi, Juan Emilio Prades Bel, Tamorlan, مصطفى ملو, Wimmiden, Meriemou</span>
     <a href="#accueil" class="back-top" data-i18n="backTop">Retour en haut ↑</a>
   </div>
 </footer>
@@ -257,11 +257,7 @@
           <span data-i18n="nameLabel">Votre prénom</span>
           <input id="custName" type="text" autocomplete="given-name" maxlength="60">
         </label>
-        <div class="mode-toggle" role="radiogroup">
-          <label><input type="radio" name="mode" value="pickup" checked><span data-i18n="pickup">Retrait</span></label>
-          <label><input type="radio" name="mode" value="delivery"><span data-i18n="delivery">Livraison</span></label>
-        </div>
-        <div id="deliveryFields" class="delivery-fields" hidden>
+        <div class="delivery-fields">
           <small class="delivery-note" data-i18n="deliveryNote">Livraison uniquement à Salé et Rabat.</small>
           <div class="mode-toggle" role="radiogroup">
             <label><input type="radio" name="city" value="sale" checked><span data-i18n="citySale">Salé</span></label>

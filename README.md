@@ -38,7 +38,7 @@ Current credits (required by the licences while these photos are used):
 - msemen.jpg — "Msemmen" by Juan Emilio Prades Bel, CC BY-SA 4.0
 - harcha.jpg — "Harcha (Homemade)" by Tamorlan, CC BY-SA 3.0
 - batbout.jpg — "Batbout" by مصطفى ملو, CC BY-SA 4.0
-- hero.jpg — "Bread Tafrnaout Morocco" by رشيدة رقي, CC BY-SA 4.0
+- hero.jpg — "Moroccan breakfast" by Wimmiden, CC BY-SA 4.0
 - story.jpg — "Khobz" by Meriemou, CC BY-SA 4.0
 
 All from https://commons.wikimedia.org. The same credits are shown in the site footer.

@@ -46,8 +46,8 @@ const translations = {
     step1Text: "Ajoutez vos favoris à votre sélection et choisissez les quantités.",
     step2Title: "Envoyez sur WhatsApp",
     step2Text: "Votre commande est prête dans un message : il ne reste qu’à l’envoyer.",
-    step3Title: "Retrait ou livraison",
-    step3Text: "Récupérez-la chez nous à Salé, ou faites-vous livrer à Salé ou Rabat.",
+    step3Title: "On vous livre",
+    step3Text: "Nous livrons votre commande chez vous, à Salé ou à Rabat.",
 
     // Histoire
     ourPhilosophy: "NOTRE PHILOSOPHIE",
@@ -86,8 +86,6 @@ const translations = {
     totalLabel: "Total estimé",
     detailsTitle: "VOS INFORMATIONS",
     nameLabel: "Votre prénom",
-    pickup: "Retrait",
-    delivery: "Livraison",
     deliveryNote: "Livraison uniquement à Salé et Rabat.",
     citySale: "Salé",
     cityRabat: "Rabat",
@@ -101,11 +99,10 @@ const translations = {
     // Message WhatsApp de commande
     orderIntro: "Salam Rziza House ! Je souhaite commander :",
     msgName: "Nom",
-    msgMode: "Mode",
     msgCity: "Ville",
     msgAddress: "Adresse",
     msgWhen: "Pour",
-    orderOutro: "Pouvez-vous me confirmer les prix, la disponibilité et les modalités de retrait/livraison ? Merci !",
+    orderOutro: "Pouvez-vous me confirmer les prix, la disponibilité et la livraison ? Merci !",
   },
 
   ar: {
@@ -152,8 +149,8 @@ const translations = {
     step1Text: "زيدوا اللي عجبكم للاختيارات ديالكم وختاروا الكمية.",
     step2Title: "صيفطوا عبر واتساب",
     step2Text: "الطلب ديالكم كيوجد فرسالة واجدة، غير صيفطوها.",
-    step3Title: "الاستلام ولا التوصيل",
-    step3Text: "جيو خودوه من عندنا فسلا، ولا نوصلوه ليكم لسلا ولا الرباط.",
+    step3Title: "كنوصلوه ليكم",
+    step3Text: "كنوصلو الطلب ديالكم حتى لباب الدار، فسلا ولا الرباط.",
 
     // Histoire
     ourPhilosophy: "الفكرة ديالنا",
@@ -192,8 +189,6 @@ const translations = {
     totalLabel: "المجموع التقريبي",
     detailsTitle: "المعلومات ديالكم",
     nameLabel: "السمية ديالكم",
-    pickup: "غادي نجي ناخدو",
-    delivery: "توصيل",
     deliveryNote: "التوصيل غير لسلا والرباط.",
     citySale: "سلا",
     cityRabat: "الرباط",
@@ -207,10 +202,9 @@ const translations = {
     // Message WhatsApp de commande
     orderIntro: "السلام عليكم دار رزيزة! بغيت نطلب:",
     msgName: "الاسم",
-    msgMode: "الطريقة",
     msgCity: "المدينة",
     msgAddress: "العنوان",
     msgWhen: "إمتى",
-    orderOutro: "عافاكم أكدوا ليا الثمن والتوفر وطريقة الاستلام أو التوصيل. شكراً!",
+    orderOutro: "عافاكم أكدوا ليا الثمن والتوفر والتوصيل. شكراً!",
   },
 };

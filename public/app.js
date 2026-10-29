@@ -284,11 +284,9 @@ function trapFocus(event) {
 // ---------- Order details ----------
 
 function details() {
-  const mode = document.querySelector('input[name="mode"]:checked');
   const city = document.querySelector('input[name="city"]:checked');
   return {
     name: $("#custName").value.trim(),
-    mode: mode ? mode.value : "pickup",
     city: city ? city.value : "sale",
     address: $("#custAddress").value.trim(),
     when: $("#custWhen").value.trim(),
@@ -305,14 +303,8 @@ function restoreDetails() {
   $("#custName").value = saved.name || "";
   $("#custAddress").value = saved.address || "";
   $("#custWhen").value = saved.when || "";
-  const mode = saved.mode === "delivery" ? "delivery" : "pickup";
   const city = saved.city === "rabat" ? "rabat" : "sale";
-  document.querySelector(`input[name="mode"][value="${mode}"]`).checked = true;
   document.querySelector(`input[name="city"][value="${city}"]`).checked = true;
-}
-
-function syncDeliveryFields() {
-  $("#deliveryFields").hidden = details().mode !== "delivery";
 }
 
 function orderMessage() {
@@ -324,11 +316,8 @@ function orderMessage() {
   lines.push(t("totalLabel") + " : " + formatPrice(cartTotal()), "");
 
   if (d.name) lines.push(t("msgName") + " : " + d.name);
-  lines.push(t("msgMode") + " : " + (d.mode === "delivery" ? t("delivery") : t("pickup")));
-  if (d.mode === "delivery") {
-    lines.push(t("msgCity") + " : " + (d.city === "rabat" ? t("cityRabat") : t("citySale")));
-    if (d.address) lines.push(t("msgAddress") + " : " + d.address);
-  }
+  lines.push(t("msgCity") + " : " + (d.city === "rabat" ? t("cityRabat") : t("citySale")));
+  if (d.address) lines.push(t("msgAddress") + " : " + d.address);
   if (d.when) lines.push(t("msgWhen") + " : " + d.when);
 
   lines.push("", t("orderOutro"));
@@ -400,12 +389,7 @@ $("#facebookLink").href = SOCIAL_LINKS.facebook;
 $("#year").textContent = new Date().getFullYear();
 
 ["#custName", "#custAddress", "#custWhen"].forEach((selector) => $(selector).addEventListener("input", saveDetails));
-document.querySelectorAll('input[name="mode"], input[name="city"]').forEach((radio) =>
-  radio.addEventListener("change", () => {
-    syncDeliveryFields();
-    saveDetails();
-  }),
-);
+document.querySelectorAll('input[name="city"]').forEach((radio) => radio.addEventListener("change", saveDetails));
 
 document.addEventListener("keydown", (event) => {
   if (!$("#cartOverlay").hidden) {
@@ -442,5 +426,4 @@ $("#floatOrder").addEventListener("click", () => {
 // ---------- Start ----------
 
 restoreDetails();
-syncDeliveryFields();
 setLanguage(lang);
