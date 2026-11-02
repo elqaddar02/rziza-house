@@ -16,7 +16,7 @@ Plain HTML/CSS/JS, no build step: the `public/` folder can be served by any stat
 
 ### Adding a product
 
-Copy a block in `PRODUCTS` in `public/products.js`, give it a new `id`, price, French and Arabic name and description, and put its photo in `public/images/<id>.jpg`.
+Copy a block in `PRODUCTS` in `public/products.js`, give it a new `id`, price, French and Arabic name and description, and put its photo in `public/images/<id>.jpg`. `featured: true` shows it as the big card (used for rziza, the house speciality, photographed by the shop).
 
 Orders are sent to WhatsApp +212 654 489 425.
 

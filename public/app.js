@@ -150,7 +150,7 @@ function renderProducts() {
       el("div", {}, el("h3", {}, product.name[lang]), el("p", {}, product.description[lang])),
       el("span", { className: "product-price" }, formatPrice(product.price)),
     );
-    return el("article", { className: "product-card" }, image, info);
+    return el("article", { className: "product-card" + (product.featured ? " featured" : "") }, image, info);
   });
   $("#productGrid").replaceChildren(...cards);
   updateCardActions();

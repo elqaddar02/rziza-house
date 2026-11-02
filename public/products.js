@@ -15,7 +15,19 @@ const SOCIAL_LINKS = {
 // et mettez sa photo dans images/<id>.jpg (sinon une illustration s'affiche).
 // price : prix en dirhams (provisoires pour l'instant).
 // tag : petite étiquette sur la photo (facultatif).
+// featured : grande carte mise en avant (une seule, de préférence en premier).
 const PRODUCTS = [
+  {
+    id: "rziza",
+    price: 10,
+    name: { fr: "Rziza", ar: "رزيزة" },
+    description: {
+      fr: "Notre spécialité, filée à la main, fine et dorée",
+      ar: "الاختصاص ديالنا، مخدومة باليد، رقيقة ومحمرة",
+    },
+    tag: { fr: "NOTRE SPÉCIALITÉ", ar: "الاختصاص ديال الدار" },
+    featured: true,
+  },
   {
     id: "khobz",
     price: 2,

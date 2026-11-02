@@ -421,6 +421,22 @@ button {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 19px;
 }
+/* The speciality takes a 2×2 block: big photo, the other products beside it. */
+.product-card.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+}
+.product-card.featured .product-image {
+  flex: 1;
+  height: auto;
+  min-height: clamp(300px, 36vw, 520px);
+}
+.product-card.featured .product-tag {
+  background: var(--olive);
+  color: #fff8e9;
+}
 .product-card {
   min-width: 0;
 }
@@ -1332,6 +1348,12 @@ a.footer-item:hover {
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px 18px;
+  }
+  .product-card.featured {
+    grid-row: auto;
+  }
+  .product-card.featured .product-image {
+    min-height: clamp(240px, 62vw, 420px);
   }
   .product-image {
     height: clamp(240px, 42vw, 360px);
