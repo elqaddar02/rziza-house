@@ -62,3 +62,13 @@ All from https://commons.wikimedia.org. The same credits are shown in the site f
 ## Prices and delivery
 
 Prices are placeholders, set in `public/products.js` (dirhams). Delivery is offered only in Salé and Rabat. Opening hours (8h–20h) are placeholders in `public/translations.js` (`topline2`, `hoursText`).
+
+## Product photos with Gemini (optional)
+
+`tools/gemini-photo.mjs` sends a real product photo to Google Gemini and gets it back in a new scene, keeping the product as photographed:
+
+```
+node tools/gemini-photo.mjs photo.jpg out.png "on a brass Moroccan tray on a wooden table, morning light"
+```
+
+It needs a Gemini API key from Google AI Studio, stored on the computer with `setx GEMINI_API_KEY "..."` (never in the code). Image generation is paid per image (about $0.07 with the default `gemini-3.1-flash-image`; `--model gemini-nano-banana-2.1` is about half). Always compare the result with the original photo before using it: the food must look like what customers receive.
