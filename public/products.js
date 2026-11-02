@@ -19,7 +19,7 @@ const SOCIAL_LINKS = {
 const PRODUCTS = [
   {
     id: "rziza",
-    price: 10,
+    price: 6,
     name: { fr: "Rziza", ar: "رزيزة" },
     description: {
       fr: "Notre spécialité, filée à la main, fine et dorée",
