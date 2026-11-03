@@ -15,7 +15,6 @@ const SOCIAL_LINKS = {
 // et mettez sa photo dans images/<id>.jpg (sinon une illustration s'affiche).
 // price : prix en dirhams (provisoires pour l'instant).
 // tag : petite étiquette sur la photo (facultatif).
-// featured : grande carte mise en avant (une seule, de préférence en premier).
 const PRODUCTS = [
   {
     id: "rziza",
@@ -26,14 +25,6 @@ const PRODUCTS = [
       ar: "الاختصاص ديالنا، مخدومة باليد، رقيقة ومحمرة",
     },
     tag: { fr: "NOTRE SPÉCIALITÉ", ar: "الاختصاص ديال الدار" },
-    featured: true,
-  },
-  {
-    id: "khobz",
-    price: 2,
-    name: { fr: "Khobz beldi", ar: "الخبز البلدي" },
-    description: { fr: "Le pain marocain du quotidien", ar: "الخبز ديال كل نهار" },
-    tag: { fr: "L'INCONTOURNABLE", ar: "الأكثر مطلوب" },
   },
   {
     id: "msemen",
@@ -48,10 +39,10 @@ const PRODUCTS = [
     description: { fr: "La douceur de la semoule", ar: "بالسميدة، رطبة وبنينة" },
   },
   {
-    id: "batbout",
-    price: 2,
-    name: { fr: "Batbout", ar: "بطبوط" },
-    description: { fr: "Moelleux, parfait à partager", ar: "رطب، مزيان للحشو" },
+    id: "baghrir",
+    price: 3,
+    name: { fr: "Baghrir", ar: "بغرير" },
+    description: { fr: "La crêpe aux mille trous, légère et moelleuse", ar: "خفيف ورطب، بألف ثقبة" },
   },
 ];
 

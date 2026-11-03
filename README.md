@@ -9,14 +9,14 @@ Website for **Rziza House** (دار رزيزة), a homemade Moroccan bread shop 
 - `public/app.js` — site logic: product cards, language, basket, WhatsApp order message.
 - `public/index.html` — page structure.
 - `public/theme.css` — styling and responsive layout.
-- `public/images/` — product photos named after the product id (`khobz.jpg`, ...), plus `hero.jpg`, `story.jpg` and `og.jpg` (the 1200×630 image shown when the link is shared, in Arabic; bump `?v=` on its URL in `index.html` when replacing it so WhatsApp refreshes the preview).
+- `public/images/` — product photos named after the product id (`rziza.jpg`, ...), plus `hero.jpg`, `story.jpg` and `og.jpg` (the 1200×630 image shown when the link is shared, in Arabic; bump `?v=` on its URL in `index.html` when replacing it so WhatsApp refreshes the preview).
 - `public/favicon.svg` — the logo mark (arch + coiled spiral), also drawn inline in `index.html`.
 
 Plain HTML/CSS/JS, no build step: the `public/` folder can be served by any static host.
 
 ### Adding a product
 
-Copy a block in `PRODUCTS` in `public/products.js`, give it a new `id`, price, French and Arabic name and description, and put its photo in `public/images/<id>.jpg`. `featured: true` shows it as the big card (used for rziza, the house speciality, photographed by the shop).
+Copy a block in `PRODUCTS` in `public/products.js`, give it a new `id`, price, French and Arabic name and description, and put its photo in `public/images/<id>.jpg`.
 
 Orders are sent to WhatsApp +212 654 489 425.
 
@@ -44,16 +44,14 @@ The site was originally exported from a Hatchable project (slug `khobz-darna`) o
 
 ## Product photos
 
-Placeholder photos from Wikimedia Commons are in `public/images/` (`khobz.jpg`, `msemen.jpg`, `harcha.jpg`, `batbout.jpg`). Replace them with your own photos using the same file names. If a file is missing, the card shows a drawn placeholder with the bread name.
+`rziza.jpg` is the shop's own photo. `msemen.jpg` and `harcha.jpg` are placeholder photos from Wikimedia Commons, and `baghrir` has no photo yet (its card shows a drawn placeholder). Replace them with your own photos using the same file names. If a file is missing, the card shows a drawn placeholder with the bread name.
 
 The site prefers lighter WebP copies when they exist: `<id>.webp` (640 px wide) for products, and `hero.webp` / `story.webp` (1024 px) plus `hero-640.webp` / `story-640.webp` for phones. **When you replace a photo, delete or regenerate its `.webp` copies**, otherwise the old photo keeps showing. A product with only a `.jpg` works fine, just heavier. Product and story photos load only when they come close to the screen.
 
 Current credits (required by the licences while these photos are used):
 
-- khobz.jpg — "The Moroccan bread" by Bidiyoutchi, CC BY-SA 4.0
 - msemen.jpg — "Msemmen" by Juan Emilio Prades Bel, CC BY-SA 4.0
 - harcha.jpg — "Harcha (Homemade)" by Tamorlan, CC BY-SA 3.0
-- batbout.jpg — "Batbout" by مصطفى ملو, CC BY-SA 4.0
 - hero.jpg — "Moroccan breakfast" by Wimmiden, CC BY-SA 4.0
 - story.jpg — "Khobz" by Meriemou, CC BY-SA 4.0
 
