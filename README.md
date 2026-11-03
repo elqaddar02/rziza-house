@@ -50,7 +50,6 @@ The site prefers lighter WebP copies when they exist: `<id>.webp` (640 px wide) 
 
 Current credits (required by the licences while these photos are used):
 
-- hero.jpg — "Moroccan breakfast" by Wimmiden, CC BY-SA 4.0
 - story.jpg — "Khobz" by Meriemou, CC BY-SA 4.0
 
 All from https://commons.wikimedia.org. The same credits are shown in the site footer.
