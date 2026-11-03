@@ -54,6 +54,7 @@ const translations = {
     storyTitle: "Le bonheur a souvent<br>le goût du <em>fait maison.</em>",
     storyP1: "Chez Rziza House, nous croyons aux choses simples : de bons ingrédients, des gestes faits avec soin et ces saveurs familières qui rassemblent tout le monde autour de la table.",
     storyP2: "Notre inspiration vient de la cuisine marocaine et de ces petits gestes du quotidien qui font qu’une maison est une maison.",
+    storyQuoteSub: "Avec intention et amour",
     signature: "Avec amour, chaque jour.",
 
     // Contact et pied de page
@@ -157,6 +158,7 @@ const translations = {
     storyTitle: "بعض المرات السعادة<br>كتكون <em>فالبنة ديال الدار.</em>",
     storyP1: "فدار رزيزة، كنآمنو بالحوايج البسيطة: مكونات مزيانة، يدين كيخدمو بالعناية، وبنة كتجمع العائلة كاملة على المائدة.",
     storyP2: "الإلهام ديالنا جاي من المطبخ المغربي ومن داكشي البسيط اللي كيخلي الدار عامرة بالمحبة.",
+    storyQuoteSub: "من دارنا لداركم",
     signature: "بكل حب، كل نهار.",
 
     // Contact et pied de page

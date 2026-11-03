@@ -561,33 +561,64 @@ button {
   background: #f1e8d9;
   min-height: 560px;
 }
-.story-image {
-  position: relative;
-  min-height: 500px;
+/* Typographic arch instead of a photo: the house motto on olive, framed in gold. */
+.story-side {
+  display: flex;
   padding: 44px 9% 44px 18%;
 }
-.story-image-inner {
-  height: 100%;
-  min-height: 420px;
-  background: #e4d6bd center/cover;
-  border-radius: 46% 46% 2px 2px;
-  box-shadow: 0 15px 35px #55432b16;
-}
-/* The photo is only loaded once app.js sees the section coming into view. */
-.story-image-inner.loaded {
-  background-image: url("images/story.jpg");
-  background-image: image-set(url("images/story.webp") type("image/webp"), url("images/story.jpg") type("image/jpeg"));
-}
-.story-label {
-  position: absolute;
-  left: 8%;
-  bottom: 78px;
-  background: var(--olive);
+.story-quote {
+  position: relative;
+  flex: 1;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 90px 10% 60px;
+  text-align: center;
   color: #fff7e9;
+  background: radial-gradient(circle at 50% 30%, #6b7149, #3f4428 78%);
+  border-radius: 46% 46% 4px 4px;
+  box-shadow: 0 18px 40px #3a33202e;
+}
+.story-quote::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid #d8a77c80;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.story-star {
+  width: 30px;
+  height: 30px;
+  color: #d8a77c;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+.story-quote-ar {
+  font-family: var(--arabic-display);
+  font-weight: 700;
+  font-size: clamp(46px, 4.8vw, 70px);
+  line-height: 1.35;
+}
+.story-quote-line {
+  width: 64px;
+  height: 1px;
+  background: #d8a77c;
+}
+.story-quote-sub {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #e8d3b4;
+}
+.rtl .story-quote-sub {
   font-family: var(--arabic);
-  font-size: 17px;
-  padding: 13px 19px;
-  transform: rotate(-5deg);
+  font-size: 15px;
+  letter-spacing: 0;
 }
 .story-copy {
   padding: 88px 15% 70px 10%;
@@ -754,10 +785,6 @@ a.footer-item:hover {
   padding-top: 20px;
   font-size: 11px;
   color: #7c7666;
-}
-.credits {
-  flex: 1;
-  text-align: center;
 }
 .back-top {
   font-size: 12px;
@@ -956,12 +983,8 @@ a.footer-item:hover {
   right: auto;
   left: 12px;
 }
-.rtl .story-image {
+.rtl .story-side {
   padding: 44px 18% 44px 9%;
-}
-.rtl .story-label {
-  left: auto;
-  right: 8%;
 }
 .rtl .story-copy {
   padding: 88px 10% 70px 15%;
@@ -1337,23 +1360,15 @@ a.footer-item:hover {
   .story-copy {
     padding: 65px 8%;
   }
-  .story-image {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-  .story-label {
-    left: 3%;
+  .story-side,
+  .rtl .story-side {
+    padding-left: 8%;
+    padding-right: 8%;
   }
   .rtl .story-copy {
     padding: 65px 8%;
   }
-  .rtl .story-image {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-  .rtl .story-label {
-    right: 3%;
-  }
+
   .promise-strip {
     gap: 4%;
   }
@@ -1554,19 +1569,13 @@ a.footer-item:hover {
   .story {
     grid-template-columns: 1fr;
   }
-  .story-image {
-    min-height: 350px;
-    padding: 35px 15%;
+  .story-side,
+  .rtl .story-side {
+    padding: 40px 12% 0;
   }
-  .story-image-inner {
-    min-height: 310px;
-  }
-  .story-image-inner.loaded {
-    background-image: image-set(url("images/story-640.webp") type("image/webp"), url("images/story.jpg") type("image/jpeg"));
-  }
-  .story-label {
-    bottom: 53px;
-    left: 7%;
+  .story-quote {
+    min-height: 330px;
+    padding: 70px 8% 44px;
   }
   .story-copy {
     padding: 48px 8% 55px;
@@ -1594,10 +1603,6 @@ a.footer-item:hover {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-  }
-  .credits {
-    text-align: start;
-    line-height: 1.6;
   }
   .float-order {
     display: flex;
@@ -1647,10 +1652,7 @@ a.footer-item:hover {
     margin-left: 0;
     text-align: right;
   }
-  .rtl .story-label {
-    left: auto;
-    right: 7%;
-  }
+
 }
 @media (prefers-reduced-motion: reduce) {
   *,

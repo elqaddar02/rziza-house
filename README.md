@@ -9,7 +9,7 @@ Website for **Rziza House** (دار رزيزة), a homemade Moroccan bread shop 
 - `public/app.js` — site logic: product cards, language, basket, WhatsApp order message.
 - `public/index.html` — page structure.
 - `public/theme.css` — styling and responsive layout.
-- `public/images/` — product photos named after the product id (`rziza.jpg`, ...), plus `hero.jpg`, `story.jpg` and `og.jpg` (the 1200×630 image shown when the link is shared, in Arabic; bump `?v=` on its URL in `index.html` when replacing it so WhatsApp refreshes the preview).
+- `public/images/` — product photos named after the product id (`rziza.jpg`, ...), plus `hero.jpg` and `og.jpg` (the 1200×630 image shown when the link is shared, in Arabic; bump `?v=` on its URL in `index.html` when replacing it so WhatsApp refreshes the preview).
 - `public/images/logo.png` (full logo), `public/images/logo-mark.png` (house and palm emblem, used in the header, footer and signature), `public/favicon-48.png` and `public/apple-touch-icon.png` (the house alone, for browser tabs and phone home screens).
 
 Plain HTML/CSS/JS, no build step: the `public/` folder can be served by any static host.
@@ -46,13 +46,9 @@ The site was originally exported from a Hatchable project (slug `khobz-darna`) o
 
 Product photos (`rziza`, `msemen`, `harcha`, `baghrir`) are the shop's. Replace them using the same file names; the `.jpg` must be at least 500×500 px for the WhatsApp catalogue. If a file is missing, the card shows a drawn placeholder with the bread name.
 
-The site prefers lighter WebP copies when they exist: `<id>.webp` (640 px wide) for products, and `hero.webp` / `story.webp` (1024 px) plus `hero-640.webp` / `story-640.webp` for phones. **When you replace a photo, delete or regenerate its `.webp` copies**, otherwise the old photo keeps showing. A product with only a `.jpg` works fine, just heavier. Product and story photos load only when they come close to the screen.
+The site prefers lighter WebP copies when they exist: `<id>.webp` (640 px wide) for products, and `hero.webp` (1024 px) plus `hero-640.webp` for phones. **When you replace a photo, delete or regenerate its `.webp` copies**, otherwise the old photo keeps showing. A product with only a `.jpg` works fine, just heavier. Product photos load only when they come close to the screen.
 
-Current credits (required by the licences while these photos are used):
-
-- story.jpg — "Khobz" by Meriemou, CC BY-SA 4.0
-
-All from https://commons.wikimedia.org. The same credits are shown in the site footer.
+All photos on the site are the shop's own; no third-party credits are needed.
 
 ## Prices and delivery
 

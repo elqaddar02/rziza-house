@@ -456,9 +456,6 @@ if ("IntersectionObserver" in window) {
   document.querySelectorAll("[data-reveal]").forEach((node) => observer.observe(node));
 }
 
-const storyPhoto = $(".story-image-inner");
-whenNearScreen(storyPhoto, () => storyPhoto.classList.add("loaded"));
-
 // Phone number, social links and year
 document.querySelectorAll("[data-phone-link]").forEach((link) => {
   link.href = "tel:+" + WHATSAPP_NUMBER;
