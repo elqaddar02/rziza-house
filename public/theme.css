@@ -80,17 +80,15 @@ button {
   align-items: center;
   gap: 11px;
 }
+/* Logo emblem (house and palm), wider than tall: sized by height. */
 .brand-mark {
-  width: 40px;
-  height: 40px;
+  width: auto;
+  height: 46px;
   flex-shrink: 0;
-  transition:
-    width 0.25s,
-    height 0.25s;
+  transition: height 0.25s;
 }
 .header.scrolled .brand-mark {
-  width: 34px;
-  height: 34px;
+  height: 38px;
 }
 .brand-copy {
   display: flex;
@@ -610,8 +608,8 @@ button {
   margin-top: 28px;
 }
 .signature-mark {
-  width: 40px;
-  height: 40px;
+  width: auto;
+  height: 46px;
 }
 .signature > span:last-child {
   display: flex;
@@ -1379,8 +1377,7 @@ a.footer-item:hover {
   }
   .brand-mark,
   .header.scrolled .brand-mark {
-    width: 34px;
-    height: 34px;
+    height: 36px;
   }
   .header.scrolled {
     height: 64px;
