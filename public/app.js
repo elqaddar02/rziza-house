@@ -37,10 +37,10 @@ let toastTimer;
 
 // ---------- Helpers ----------
 
-// "{fee}" in a text is replaced by the delivery fee, e.g. "10 DH".
+// "{feeRabat}" in a text is replaced by the delivery fee to Rabat, e.g. "10 DH".
 function t(key) {
   const value = translations[lang][key];
-  return typeof value === "string" ? value.replace("{fee}", () => formatPrice(DELIVERY_FEE)) : value;
+  return typeof value === "string" ? value.replace("{feeRabat}", () => formatPrice(DELIVERY_FEES.rabat)) : value;
 }
 
 function productName(id) {
@@ -63,8 +63,22 @@ function cartSubtotal() {
   return cartIds().reduce((sum, id) => sum + cart[id] * productById[id].price, 0);
 }
 
+// Delivery depends on the city chosen in the basket.
+function deliveryFee() {
+  return DELIVERY_FEES[details().city] || 0;
+}
+
+function deliveryText() {
+  const fee = deliveryFee();
+  return fee ? formatPrice(fee) : t("free");
+}
+
+function cityName(city) {
+  return city === "rabat" ? t("cityRabat") : t("citySale");
+}
+
 function cartTotal() {
-  return cartSubtotal() + DELIVERY_FEE;
+  return cartSubtotal() + deliveryFee();
 }
 
 function whatsappLink(message) {
@@ -332,7 +346,8 @@ function renderCart() {
   $("#cartTotal").hidden = empty;
   $("#orderDetails").hidden = empty;
   $("#cartSubtotalValue").textContent = formatPrice(cartSubtotal());
-  $("#cartDeliveryValue").textContent = formatPrice(DELIVERY_FEE);
+  $("#cartDeliveryLabel").textContent = t("deliveryLabel") + " (" + cityName(details().city) + ")";
+  $("#cartDeliveryValue").textContent = deliveryText();
   $("#cartTotalValue").textContent = formatPrice(cartTotal());
   updateCount();
   updateCardActions();
@@ -401,13 +416,13 @@ function orderMessage() {
   }
   lines.push(
     t("subtotalLabel") + " : " + formatPrice(cartSubtotal()),
-    t("deliveryLabel") + " : " + formatPrice(DELIVERY_FEE),
+    t("deliveryLabel") + " : " + deliveryText(),
     t("totalLabel") + " : " + formatPrice(cartTotal()),
     "",
   );
 
   if (d.name) lines.push(t("msgName") + " : " + d.name);
-  lines.push(t("msgCity") + " : " + (d.city === "rabat" ? t("cityRabat") : t("citySale")));
+  lines.push(t("msgCity") + " : " + cityName(d.city));
   if (d.address) lines.push(t("msgAddress") + " : " + d.address);
   if (d.when) lines.push(t("msgWhen") + " : " + d.when);
 
@@ -480,7 +495,12 @@ $("#facebookLink").href = SOCIAL_LINKS.facebook;
 $("#year").textContent = new Date().getFullYear();
 
 ["#custName", "#custAddress", "#custWhen"].forEach((selector) => $(selector).addEventListener("input", saveDetails));
-document.querySelectorAll('input[name="city"]').forEach((radio) => radio.addEventListener("change", saveDetails));
+document.querySelectorAll('input[name="city"]').forEach((radio) =>
+  radio.addEventListener("change", () => {
+    saveDetails();
+    renderCart();
+  }),
+);
 
 document.addEventListener("keydown", (event) => {
   if (!$("#cartOverlay").hidden) {

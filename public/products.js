@@ -4,8 +4,8 @@
 // Numéro qui reçoit les commandes : indicatif pays inclus, sans + ni espaces.
 const WHATSAPP_NUMBER = "212618244620";
 
-// Frais de livraison en dirhams, les mêmes pour Salé et Rabat.
-const DELIVERY_FEE = 10;
+// Frais de livraison en dirhams, par ville (0 = gratuite).
+const DELIVERY_FEES = { sale: 0, rabat: 10 };
 
 // Réseaux sociaux : liens provisoires ("#") à remplacer par les vrais comptes.
 const SOCIAL_LINKS = {

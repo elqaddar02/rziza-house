@@ -52,4 +52,4 @@ All photos on the site are the shop's own; no third-party credits are needed.
 
 ## Prices and delivery
 
-Prices are set in `public/products.js` (dirhams). Delivery is offered only in Salé and Rabat, for `DELIVERY_FEE` (10 DH, also in `products.js`), added to the basket total and the WhatsApp message. Opening hours (8h–20h) are placeholders in `public/translations.js` (`topline2`, `hoursText`).
+Prices are set in `public/products.js` (dirhams). Delivery is offered only in Salé (free) and Rabat (10 DH), set by `DELIVERY_FEES` in `products.js`; the fee follows the city chosen in the basket and is added to the total and the WhatsApp message. Opening hours (8h–20h) are placeholders in `public/translations.js` (`topline2`, `hoursText`).
