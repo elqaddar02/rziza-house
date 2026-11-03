@@ -4,7 +4,7 @@
 const translations = {
   fr: {
     // En-tête et marque
-    topline: "Livraison à Salé et Rabat",
+    topline: "Livraison gratuite à Salé · {feeRabat} pour Rabat",
     topline2: "Commandes tous les jours, 8h – 20h", // horaires provisoires
     brandName: "Rziza House",
     brandSub: "<span lang=\"ar\">دار رزيزة</span> · LE GOÛT DE LA MAISON",
@@ -22,12 +22,12 @@ const translations = {
     heroText: "Des pains marocains préparés avec patience, des gestes transmis et beaucoup d’amour. Tout simplement, comme chez nous.",
     discover: "Découvrir nos produits",
     badgeFresh: "Cuit le jour même",
-    badgeDelivery: "Livraison Salé & Rabat",
+    badgeDelivery: "Livraison gratuite à Salé",
     badgeWhatsapp: "Commande sur WhatsApp",
     heroCaption: "Le vrai goût du fait maison",
     promise1: "Des recettes traditionnelles",
     promise2: "Préparé avec amour",
-    promise3: "Livraison à Salé et Rabat",
+    promise3: "Livraison gratuite à Salé, {feeRabat} pour Rabat",
 
     // Produits
     ourSelection: "NOTRE SÉLECTION",
@@ -90,7 +90,7 @@ const translations = {
     totalLabel: "Total",
     detailsTitle: "VOS INFORMATIONS",
     nameLabel: "Votre prénom",
-    deliveryNote: "Livraison uniquement à Salé et Rabat.",
+    deliveryNote: "Livraison gratuite à Salé, {feeRabat} pour Rabat.",
     citySale: "Salé",
     cityRabat: "Rabat",
     addressLabel: "Quartier / adresse",
@@ -111,7 +111,7 @@ const translations = {
 
   ar: {
     // En-tête et marque
-    topline: "التوصيل لسلا والرباط",
+    topline: "التوصيل مجاني فسلا · {feeRabat} للرباط",
     topline2: "الطلبات كل نهار، من 8 الصباح حتى 8 الليل",
     brandName: "دار رزيزة",
     brandSub: "RZIZA HOUSE · مذاق الدار",
@@ -129,12 +129,12 @@ const translations = {
     heroText: "خبز مغربي محضر بالصبر، بطرق تقليدية وبزاف ديال الحب. ببساطة، بحال ديال دارنا.",
     discover: "اكتشفوا منتوجاتنا",
     badgeFresh: "مطيب نفس النهار",
-    badgeDelivery: "التوصيل لسلا والرباط",
+    badgeDelivery: "توصيل مجاني فسلا",
     badgeWhatsapp: "الطلب عبر واتساب",
     heroCaption: "المذاق الحقيقي ديال الدار",
     promise1: "وصفات تقليدية",
     promise2: "محضر بكل حب",
-    promise3: "التوصيل لسلا والرباط",
+    promise3: "التوصيل مجاني فسلا، {feeRabat} للرباط",
 
     // Produits
     ourSelection: "منتوجاتنا",
@@ -197,7 +197,7 @@ const translations = {
     totalLabel: "المجموع",
     detailsTitle: "المعلومات ديالكم",
     nameLabel: "السمية ديالكم",
-    deliveryNote: "التوصيل غير لسلا والرباط.",
+    deliveryNote: "التوصيل مجاني فسلا، و{feeRabat} للرباط.",
     citySale: "سلا",
     cityRabat: "الرباط",
     addressLabel: "الحي / العنوان",
