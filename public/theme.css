@@ -421,17 +421,36 @@ button {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 19px;
 }
-/* The speciality takes a 2×2 block: big photo, the other products beside it. */
+/* The speciality is a wide banner above the other products: landscape photo, text beside it. */
 .product-card.featured {
-  grid-column: span 2;
-  grid-row: span 2;
-  display: flex;
-  flex-direction: column;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  align-items: center;
+  gap: 0 5%;
+  margin-bottom: 14px;
 }
 .product-card.featured .product-image {
-  flex: 1;
   height: auto;
-  min-height: clamp(300px, 36vw, 520px);
+  aspect-ratio: 4 / 3;
+}
+.product-card.featured .product-info {
+  flex-direction: column;
+  align-items: start;
+  gap: 18px;
+  padding: 0;
+}
+.product-card.featured .product-info h3 {
+  font-size: clamp(30px, 3.4vw, 46px);
+  margin-bottom: 12px;
+}
+.product-card.featured .product-info p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.product-card.featured .product-price {
+  font-size: 18px;
+  padding: 6px 14px;
 }
 .product-card.featured .product-tag {
   background: var(--olive);
@@ -1350,10 +1369,20 @@ a.footer-item:hover {
     gap: 28px 18px;
   }
   .product-card.featured {
-    grid-row: auto;
+    display: block;
+    margin-bottom: 0;
   }
-  .product-card.featured .product-image {
-    min-height: clamp(240px, 62vw, 420px);
+  .product-card.featured .product-info {
+    flex-direction: row;
+    align-items: start;
+    padding: 16px 1px 0;
+  }
+  .product-card.featured .product-info h3 {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+  .product-card.featured .product-info p {
+    font-size: 13px;
   }
   .product-image {
     height: clamp(240px, 42vw, 360px);
