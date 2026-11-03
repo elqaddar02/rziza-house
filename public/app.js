@@ -37,8 +37,10 @@ let toastTimer;
 
 // ---------- Helpers ----------
 
+// "{fee}" in a text is replaced by the delivery fee, e.g. "10 DH".
 function t(key) {
-  return translations[lang][key];
+  const value = translations[lang][key];
+  return typeof value === "string" ? value.replace("{fee}", () => formatPrice(DELIVERY_FEE)) : value;
 }
 
 function productName(id) {
@@ -57,15 +59,19 @@ function itemCount() {
   return Object.values(cart).reduce((sum, qty) => sum + qty, 0);
 }
 
-function cartTotal() {
+function cartSubtotal() {
   return cartIds().reduce((sum, id) => sum + cart[id] * productById[id].price, 0);
+}
+
+function cartTotal() {
+  return cartSubtotal() + DELIVERY_FEE;
 }
 
 function whatsappLink(message) {
   return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
 }
 
-// "212654489425" -> "+212 6 54 48 94 25"
+// "212618244620" -> "+212 6 18 24 46 20"
 function displayPhone(number) {
   const local = number.slice(3);
   return "+" + number.slice(0, 3) + " " + local[0] + " " + local.slice(1).replace(/(\d{2})(?=\d)/g, "$1 ");
@@ -325,6 +331,8 @@ function renderCart() {
   $("#cartEmpty").hidden = !empty;
   $("#cartTotal").hidden = empty;
   $("#orderDetails").hidden = empty;
+  $("#cartSubtotalValue").textContent = formatPrice(cartSubtotal());
+  $("#cartDeliveryValue").textContent = formatPrice(DELIVERY_FEE);
   $("#cartTotalValue").textContent = formatPrice(cartTotal());
   updateCount();
   updateCardActions();
@@ -391,7 +399,12 @@ function orderMessage() {
   for (const id of cartIds()) {
     lines.push(`• ${productName(id)} × ${cart[id]} (${formatPrice(cart[id] * productById[id].price)})`);
   }
-  lines.push(t("totalLabel") + " : " + formatPrice(cartTotal()), "");
+  lines.push(
+    t("subtotalLabel") + " : " + formatPrice(cartSubtotal()),
+    t("deliveryLabel") + " : " + formatPrice(DELIVERY_FEE),
+    t("totalLabel") + " : " + formatPrice(cartTotal()),
+    "",
+  );
 
   if (d.name) lines.push(t("msgName") + " : " + d.name);
   lines.push(t("msgCity") + " : " + (d.city === "rabat" ? t("cityRabat") : t("citySale")));

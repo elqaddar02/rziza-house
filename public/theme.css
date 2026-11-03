@@ -1161,12 +1161,24 @@ a.footer-item:hover {
   color: #7c7666;
 }
 .cart-total {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: baseline;
+  row-gap: 6px;
   padding: 2px 0 14px;
   font-size: 13px;
   color: #6c6a5e;
+}
+/* Products and delivery lines above the total */
+.cart-line {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.cart-line:nth-child(2) {
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--line);
 }
 .cart-total strong {
   font-family: var(--serif);

@@ -18,7 +18,7 @@ Plain HTML/CSS/JS, no build step: the `public/` folder can be served by any stat
 
 Copy a block in `PRODUCTS` in `public/products.js`, give it a new `id`, price, French and Arabic name and description, and put its photo in `public/images/<id>.jpg`.
 
-Orders are sent to WhatsApp +212 654 489 425.
+Orders are sent to WhatsApp +212 618 244 620.
 
 ## Deployment
 
@@ -52,4 +52,4 @@ All photos on the site are the shop's own; no third-party credits are needed.
 
 ## Prices and delivery
 
-Prices are placeholders, set in `public/products.js` (dirhams). Delivery is offered only in Salé and Rabat. Opening hours (8h–20h) are placeholders in `public/translations.js` (`topline2`, `hoursText`).
+Prices are set in `public/products.js` (dirhams). Delivery is offered only in Salé and Rabat, for `DELIVERY_FEE` (10 DH, also in `products.js`), added to the basket total and the WhatsApp message. Opening hours (8h–20h) are placeholders in `public/translations.js` (`topline2`, `hoursText`).

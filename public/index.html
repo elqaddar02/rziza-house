@@ -252,7 +252,9 @@
 
     <div class="cart-bottom">
       <div id="cartTotal" class="cart-total" hidden>
-        <span data-i18n="totalLabel">المجموع التقريبي</span>
+        <div class="cart-line"><span data-i18n="subtotalLabel">المنتوجات</span><span id="cartSubtotalValue"></span></div>
+        <div class="cart-line"><span data-i18n="deliveryLabel">التوصيل (سلا والرباط)</span><span id="cartDeliveryValue"></span></div>
+        <span data-i18n="totalLabel">المجموع</span>
         <strong id="cartTotalValue"></strong>
       </div>
 
@@ -279,7 +281,7 @@
         </label>
       </div>
 
-      <p data-i18n="priceNote">الثمن تقريبي وبلا مصاريف التوصيل. كلشي كيتأكد عبر واتساب.</p>
+      <p data-i18n="priceNote">التوصيل لسلا والرباط: 10 درهم، محسوب فالمجموع. الطلب ديالكم كيتأكد عبر واتساب.</p>
       <button id="sendOrder" class="btn btn-dark order-submit" type="button">
         <span data-i18n="sendWhatsapp">صيفط الطلب عبر واتساب</span>
         <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>

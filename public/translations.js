@@ -84,7 +84,9 @@ const translations = {
     remove: "Retirer",
     decrease: "Diminuer",
     increase: "Augmenter",
-    totalLabel: "Total estimé",
+    subtotalLabel: "Produits",
+    deliveryLabel: "Livraison (Salé et Rabat)",
+    totalLabel: "Total",
     detailsTitle: "VOS INFORMATIONS",
     nameLabel: "Votre prénom",
     deliveryNote: "Livraison uniquement à Salé et Rabat.",
@@ -93,7 +95,7 @@ const translations = {
     addressLabel: "Quartier / adresse",
     whenLabel: "Pour quand ?",
     whenPlaceholder: "Ex. demain matin",
-    priceNote: "Prix indicatifs, hors frais de livraison. Tout est confirmé sur WhatsApp.",
+    priceNote: "Livraison à Salé et Rabat : {fee}, déjà comprise dans le total. Votre commande est confirmée sur WhatsApp.",
     sendWhatsapp: "Envoyer sur WhatsApp",
     noItems: "Ajoutez au moins un produit avant de commander.",
 
@@ -103,7 +105,7 @@ const translations = {
     msgCity: "Ville",
     msgAddress: "Adresse",
     msgWhen: "Pour",
-    orderOutro: "Pouvez-vous me confirmer les prix, la disponibilité et la livraison ? Merci !",
+    orderOutro: "Pouvez-vous me confirmer la disponibilité et l’heure de livraison ? Merci !",
   },
 
   ar: {
@@ -188,7 +190,9 @@ const translations = {
     remove: "حذف",
     decrease: "نقص",
     increase: "زيد",
-    totalLabel: "المجموع التقريبي",
+    subtotalLabel: "المنتوجات",
+    deliveryLabel: "التوصيل (سلا والرباط)",
+    totalLabel: "المجموع",
     detailsTitle: "المعلومات ديالكم",
     nameLabel: "السمية ديالكم",
     deliveryNote: "التوصيل غير لسلا والرباط.",
@@ -197,7 +201,7 @@ const translations = {
     addressLabel: "الحي / العنوان",
     whenLabel: "إمتى؟",
     whenPlaceholder: "مثلاً غدا الصباح",
-    priceNote: "الثمن تقريبي وبلا مصاريف التوصيل. كلشي كيتأكد عبر واتساب.",
+    priceNote: "التوصيل لسلا والرباط: {fee}، محسوب فالمجموع. الطلب ديالكم كيتأكد عبر واتساب.",
     sendWhatsapp: "صيفط الطلب عبر واتساب",
     noItems: "زيدوا شي منتوج قبل الطلب.",
 
@@ -207,6 +211,6 @@ const translations = {
     msgCity: "المدينة",
     msgAddress: "العنوان",
     msgWhen: "إمتى",
-    orderOutro: "عافاكم أكدوا ليا الثمن والتوفر والتوصيل. شكراً!",
+    orderOutro: "عافاكم أكدوا ليا التوفر ووقت التوصيل. شكراً!",
   },
 };
