@@ -40,11 +40,17 @@ let toastTimer;
 // "{feeRabat}" in a text is replaced by the delivery fee to Rabat, e.g. "10 DH".
 function t(key) {
   const value = translations[lang][key];
-  return typeof value === "string" ? value.replace("{feeRabat}", () => formatPrice(DELIVERY_FEES.rabat)) : value;
+  return typeof value === "string" ? display(value.replace("{feeRabat}", () => formatPrice(DELIVERY_FEES.rabat))) : value;
+}
+
+// The tail of ز runs under the next letter and hides the dots of a following ي (as in رزيزة).
+// ز never joins the next letter, so a hair space can sit between them without breaking the word.
+function display(text) {
+  return lang === "ar" ? text.replace(/ز(?=ي)/g, "ز\u200A") : text;
 }
 
 function productName(id) {
-  return productById[id].name[lang];
+  return display(productById[id].name[lang]);
 }
 
 function formatPrice(amount) {
@@ -159,7 +165,7 @@ function renderProducts() {
     photo.style.backgroundImage = `url("${placeholderImage(product)}")`;
     whenNearScreen(photo, () => loadProductPhoto(photo, product.id));
     const image = el("div", { className: "product-image" }, photo);
-    if (product.tag) image.append(el("span", { className: "product-tag" }, product.tag[lang]));
+    if (product.tag) image.append(el("span", { className: "product-tag" }, display(product.tag[lang])));
     const actions = el("div", { className: "card-actions" });
     actions.dataset.card = product.id;
     image.append(actions);
@@ -167,7 +173,7 @@ function renderProducts() {
     const info = el(
       "div",
       { className: "product-info" },
-      el("div", {}, el("h3", {}, product.name[lang]), el("p", {}, product.description[lang])),
+      el("div", {}, el("h3", {}, productName(product.id)), el("p", {}, display(product.description[lang]))),
       el("span", { className: "product-price" }, formatPrice(product.price)),
     );
     return el("article", { className: "product-card" }, image, info);
