@@ -130,9 +130,13 @@ button {
   direction: ltr;
 }
 .lang-toggle span {
+  display: grid;
+  place-items: center;
   min-width: 30px;
-  padding: 5px 8px;
+  height: 28px;
+  padding: 0 8px;
   border-radius: 16px;
+  line-height: 1;
   font-size: 12px;
   font-weight: 700;
   color: var(--olive);
@@ -143,8 +147,9 @@ button {
 }
 .lang-toggle span[data-lang="ar"] {
   font-family: var(--arabic);
-  font-size: 13px;
-  line-height: 1.1;
+  font-size: 14px;
+  line-height: 1;
+  padding-bottom: 3px; /* Arabic glyphs sit low in their line box */
 }
 .lang-toggle span.active {
   background: var(--olive);
@@ -1409,9 +1414,23 @@ a.footer-item:hover {
   .header.scrolled {
     height: 64px;
   }
+  /* Same height and corners as the basket button next to it */
+  .lang-toggle {
+    height: 36px;
+    padding: 3px;
+    gap: 2px;
+    border-radius: var(--radius);
+  }
   .lang-toggle span {
-    min-width: 26px;
-    padding: 4px 6px;
+    width: 28px;
+    min-width: 0;
+    height: 28px;
+    padding: 0;
+    border-radius: 2px;
+    font-size: 11px;
+  }
+  .lang-toggle span[data-lang="ar"] {
+    font-size: 15px;
   }
   .cart-btn .icon {
     display: none;
@@ -1665,6 +1684,26 @@ a.footer-item:hover {
     text-align: right;
   }
 
+}
+/* Very narrow phones: keep the header on one line */
+@media (max-width: 360px) {
+  .brand {
+    gap: 7px;
+  }
+  .brand-copy small {
+    display: none;
+  }
+  .brand-copy strong {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .brand-mark,
+  .header.scrolled .brand-mark {
+    height: 30px;
+  }
+  .header-actions {
+    gap: 4px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   *,

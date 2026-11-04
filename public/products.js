@@ -45,7 +45,7 @@ const PRODUCTS = [
     id: "baghrir",
     price: 1,
     name: { fr: "Baghrir", ar: "بغرير" },
-    description: { fr: "La crêpe aux mille trous, légère et moelleuse", ar: "خفيف ورطب، بألف ثقبة" },
+    description: { fr: "Léger et moelleux", ar: "خفيف ورطب" },
   },
 ];
 
