@@ -18,7 +18,7 @@ Plain HTML/CSS/JS, no build step: the `public/` folder can be served by any stat
 
 Copy a block in `PRODUCTS` in `public/products.js`, give it a new `id`, price, French and Arabic name and description, and put its photo in `public/images/<id>.jpg`.
 
-Orders are sent to WhatsApp +212 618 244 620.
+Orders are sent to WhatsApp +212 654 489 425.
 
 ## Deployment
 

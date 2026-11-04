@@ -91,7 +91,7 @@ function whatsappLink(message) {
   return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
 }
 
-// "212618244620" -> "+212 6 18 24 46 20"
+// "212654489425" -> "+212 6 54 48 94 25"
 function displayPhone(number) {
   const local = number.slice(3);
   return "+" + number.slice(0, 3) + " " + local[0] + " " + local.slice(1).replace(/(\d{2})(?=\d)/g, "$1 ");

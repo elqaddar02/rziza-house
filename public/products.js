@@ -2,7 +2,7 @@
 // le numéro WhatsApp, les produits ou les prix.
 
 // Numéro qui reçoit les commandes : indicatif pays inclus, sans + ni espaces.
-const WHATSAPP_NUMBER = "212618244620";
+const WHATSAPP_NUMBER = "212654489425";
 
 // Frais de livraison en dirhams, par ville (0 = gratuite).
 const DELIVERY_FEES = { sale: 0, rabat: 10 };
