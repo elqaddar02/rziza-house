@@ -223,7 +223,7 @@
     window.addEventListener("DOMContentLoaded", () => {
       const number = WHATSAPP_NUMBER;
       const local = number.slice(3);
-      const message = "السلام عليكم دار رزيزة! بغيت نطلب.";
+      const message = "السلام عليكم دار رزيزة";
       document.getElementById("whatsapp").href = "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
       document.getElementById("call").href = "tel:+" + number;
       document.getElementById("phone").textContent =
