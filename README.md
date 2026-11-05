@@ -10,7 +10,7 @@ Website for **Rziza House** (دار رزيزة), a homemade Moroccan bread shop 
 - `public/index.html` — page structure.
 - `public/theme.css` — styling and responsive layout.
 - `public/images/` — product photos named after the product id (`rziza.jpg`, ...), plus `hero.jpg` and `og.jpg` (the 1200×630 image shown when the link is shared, in Arabic; bump `?v=` on its URL in `index.html` when replacing it so WhatsApp refreshes the preview).
-- `public/images/logo.png` (full logo), `public/images/logo-mark.png` (house and palm emblem, used in the header, footer and signature), `public/favicon-48.png` and `public/apple-touch-icon.png` (the house alone, for browser tabs and phone home screens).
+- `public/images/logo.png` (full logo), `public/images/logo-mark.png` (arch with chef hat and olive branch, used in the header, footer, signature and /carte), `public/favicon-48.png` and `public/apple-touch-icon.png` (the arch alone, for browser tabs and phone home screens).
 
 Plain HTML/CSS/JS, no build step: the `public/` folder can be served by any static host.
 
