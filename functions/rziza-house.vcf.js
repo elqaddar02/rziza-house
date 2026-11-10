@@ -40,8 +40,8 @@ export async function onRequestGet({ request, env }) {
 
   return new Response(lines.join("\r\n") + "\r\n", {
     headers: {
-      "Content-Type": "text/vcard; charset=utf-8",
-      "Content-Disposition": 'inline; filename="rziza-house.vcf"',
+      "Content-Type": "text/x-vcard; charset=utf-8",
+      "Content-Disposition": 'attachment; filename="rziza-house.vcf"',
       "Cache-Control": "public, max-age=3600",
     },
   });
