@@ -10,9 +10,7 @@
   <meta name="robots" content="noindex">
   <link rel="icon" href="favicon-48.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;500;700&family=Amiri:wght@700&display=swap">
+  <link rel="manifest" href="carte.webmanifest">
   <style>
     :root {
       --cream: #f8f2e8;
@@ -36,7 +34,7 @@
       padding: 28px 16px;
       background: radial-gradient(circle at 50% 0%, #fffaf1, var(--cream) 60%);
       color: var(--ink);
-      font-family: "Noto Sans Arabic", sans-serif;
+      font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
     }
     .card {
       width: 100%;
@@ -74,7 +72,7 @@
     }
     h1 {
       margin: 6px 0 2px;
-      font-family: "Amiri", serif;
+      font-family: "Amiri", "Times New Roman", serif;
       font-size: 40px;
       line-height: 1.3;
     }
@@ -233,6 +231,12 @@
       document.getElementById("delivery").textContent =
         (DELIVERY_FEES.sale ? "التوصيل لسلا " + DELIVERY_FEES.sale + " درهم" : "التوصيل مجاني فسلا") + " · " + rabat + " درهم للرباط";
     });
+
+    if ("serviceWorker" in navigator && location.protocol !== "file:") {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw-carte.js").catch(() => {});
+      });
+    }
   </script>
 </body>
 </html>

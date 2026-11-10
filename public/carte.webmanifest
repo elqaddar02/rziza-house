@@ -1,0 +1,22 @@
+{
+  "name": "Rziza House | Carte",
+  "short_name": "Rziza Carte",
+  "description": "Carte de visite de Rziza House",
+  "start_url": "/carte",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8f2e8",
+  "theme_color": "#f8f2e8",
+  "icons": [
+    {
+      "src": "/favicon-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
