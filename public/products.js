@@ -31,7 +31,7 @@ const PRODUCTS = [
   },
   {
     id: "msemen",
-    price: 3,
+    price: 3.5,
     name: { fr: "Msemen", ar: "مسمن" },
     description: { fr: "Feuilleté, doré et généreux", ar: "مورق ومحمر مزيان" },
   },
@@ -43,7 +43,7 @@ const PRODUCTS = [
   },
   {
     id: "baghrir",
-    price: 1,
+    price: 2,
     name: { fr: "Baghrir", ar: "بغرير" },
     description: { fr: "Léger et moelleux", ar: "خفيف ورطب" },
   },
